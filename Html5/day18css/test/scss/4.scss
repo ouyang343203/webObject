@@ -1,0 +1,61 @@
+// 混合scc语法
+/*1．混合指令的语法
+＠mixin 指令名 创建混合指令的语法*/
+$blucor:blue;
+$wd:150px;
+$hg:100px;
+@mixin fangkuai100{
+    width: $wd;
+    height: $hg;
+}
+
+.box{
+    @include  fangkuai100();
+    background-color:blue;
+}
+
+.box1{
+    @include  fangkuai100();
+    background-color:blucor;
+    color: white;
+    
+}
+
+// 混合样式的写法 公共的样式可以写在里面，不一样的样式可以外部传入
+@mixin btn($w,$h,$fs){
+    @include  fangkuai100();
+    background-color:$blucor;
+    color: #fff;
+    width: $w;
+    height: $h;
+    font-size: $fs;
+    text-align: center;
+    line-height: $h;
+    border-radius: 5px;
+    border: 10px burlywood solid
+}
+
+//这里调用上面的混合指令的语法：
+// ＠include 指令名 使用混合指令的语法
+// 注意：指令名是自定义的，但注意不要用数字开头
+// 注意：如果指令有参数，传参顺序必须与定人顺序一致
+.btn1{
+    @include btn(100px, 30px,13px )
+}
+
+.btn2{
+    @include btn(200px, 300px,20px )
+}
+
+// 混合传参
+@mixin bc_color($color){
+    background-color: $color;
+    color: $color;
+    border-color:$color;
+    border: 5px burlywood solid
+}
+
+.box3{
+    @include fangkuai100();
+    @include bc_color(red);
+}

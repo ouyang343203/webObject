@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./code/css/bootstrap.css" />
+    <link rel="stylesheet" href="./code/css/bootstrap-icons.css" />
+    <script src="./code/js/bootstrap.bundle.js"></script>
+    <title>accordiont-手风琴练习</title>
+</head>
+<!-- 参考地址：https://v5.bootcss.com/docs/5.3/components/accordion/#how-it-works
+
+https://v5.bootcss.com/docs/components/accordion/
+.accordion 手风琴最外层的类最外层需要id属性，因为需要外层控制折叠项
+.accordion-item 手风琴项，有几项就有几个item
+
+在每一个手风琴项中都包含展示头： .accordion-header 用来放按钮的标题
+js属性：data-bs-toggle＝＂collapse＂控制当前item内容的展开与折叠 与显示默认不现实  show 则显示
+js属性：data-bs-target＝＂＃collapseOne＂关联要打开哪项的主题id
+展示的主题内容   展示主体 .accordion-collapse collapse 专门负责消失的类 默认所有项都有此类 只要展示主体上有.show才能显示 
+js属性：data-bs-parent＝＂＃sfq＂通过最外层父级，听他的指示关闭.accordion-body 展示主体的内容区
+-->
+
+<body>
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <!-- collapse：控制当前item内容的展开与折叠 -->
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button"  data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                     <span class="bi-envelope text-danger pe-1" style="font-size:15px"></span>
+                        第一项
+                    </button>
+                </h2>
+                <!-- 展示的主题内容   展示主体 .accordion-collapse collapse 专门负责消失的类 默认所有项都有此类 只要展示主体上有.show才能显示  闭.accordion-body 展示主体的内容区-->
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                       我是第一项的内容
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                     <span class="bi-envelope text-danger pe-1" style="font-size:15px"></span>
+                     第二项
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        我是第二项的内容
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                     <span class="bi-envelope text-danger pe-1" style="font-size:15px"></span>
+                     第三项
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        我是三项的内容
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

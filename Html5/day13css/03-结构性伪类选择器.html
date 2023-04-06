@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>结构性选择器</title>
+		<style>
+			/* 选中指定的孩子 */
+			.ul1 li:nth-child(2) {
+				color: red;
+			}
+
+			/* 选择第一个一个 */
+			.ul1 li:nth-child(1) {
+				color: green;
+			}
+
+			/* 选择第一个一个 */
+			.ul1 li:first-child {
+				color: green;
+			}
+
+			/* 选择最后一个 */
+			.ul1 li:last-child {
+				color: brown;
+			}
+
+			/* 选择奇数 */
+			.ul1 li:nth-child(odd) {
+				background-color: lightblue;
+			}
+
+			/* 选择偶数 */
+			.ul1 li:nth-child(even) {
+				background-color: lightyellow;
+			}
+
+			/* 选择指定倍数的子元素
+			如：选择2的倍数 
+			 */
+			ol li:nth-child(2n){
+				color: blueviolet;
+			}
+			
+			ol li:nth-child(2n+1){
+				background-color: skyblue;
+				border: 1px solid blue;
+			}
+			
+			/* 选择倒数第n个元素 */
+			ol li:nth-last-child(2){
+				background-color: indianred;
+				border: 1px solid blue;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul class="ul1">
+			<li>全部订单</li>
+			<li>待收货</li>
+			<li>带待发货</li>
+			<li>待评价</li>
+			<li>退换货物</li>
+		</ul>
+
+		<hr>
+
+		<ol class="ol1">
+			<li>爱的代价</li>
+			<li>月亮代表我的心</li>
+			<li>小城故事</li>
+			<li>爱</li>
+			<li>征服</li>
+			<li>再见</li>
+			<li>蝴蝶飞</li>
+			<li>老鼠爱大米</li>
+			<li>两只蝴蝶</li>
+
+		</ol>
+
+	</body>
+</html>

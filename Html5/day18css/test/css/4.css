@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/*1．混合指令的语法
+＠mixin 指令名 创建混合指令的语法*/
+.box {
+  width: 150px;
+  height: 100px;
+  background-color: blue;
+}
+
+.box1 {
+  width: 150px;
+  height: 100px;
+  background-color: blucor;
+  color: white;
+}
+
+.btn1 {
+  width: 150px;
+  height: 100px;
+  background-color: blue;
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  font-size: 13px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 10px burlywood solid;
+}
+
+.btn2 {
+  width: 150px;
+  height: 100px;
+  background-color: blue;
+  color: #fff;
+  width: 200px;
+  height: 300px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 300px;
+  border-radius: 5px;
+  border: 10px burlywood solid;
+}
+
+.box3 {
+  width: 150px;
+  height: 100px;
+  background-color: red;
+  color: red;
+  border-color: red;
+  border: 5px burlywood solid;
+}
+
+/*# sourceMappingURL=4.css.map */

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>clear 属性清除浮动的影响</title>
+		<!-- 
+           clear 属性专门解决 float带来的高度坍塌问题：
+           1．clear会让前面的浮动元素和当前元素换行显示，对后面的浮动元素无法起到作用
+           2．清除指的是清除前面＂哥哥们＂浮动对父元素产生的不支撑效果
+           3．使用clear的元素自己不可以浮动，要保持在文档流中替前面浮动走的哥哥收尾，支撑父级
+           4．clear属性只对块级元素
+		   劣势：可以使用父元素中最后一个子元素，牺牲自我（宽高都是0），清除前面浮动元素带来I的高度坍塌影响，但会造成后台遍历数据多一个孩子
+		 -->
+		<style>
+			.fu {
+				border: 5px solid #000;
+				/* 第一种方案 */
+				/* overflow: hidden; */
+
+				/* 第二种解决方案 */
+				/* width: 100%;
+				height: 100px */
+			}
+
+			.z1 {
+				width: 100px;
+				height: 100px;
+				background-color: #f00;
+				float: left;
+			}
+
+			.z2 {
+				width: 100px;
+				height: 100px;
+				background-color: #0f0;
+				float: right;
+			}
+
+			.z3 {
+				width: 100px;
+				height: 100px;
+				background-color: #00f;
+				float: right;
+			}
+
+			/* 第三种解决方案 */
+			.z4::after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="fu">
+			<div class="z1"> </div>
+			<div class="z2"> </div>
+			<div class="z3"> </div>
+			
+			<!-- 这行代码要和 .z4::after{
+				content: '';
+				display: block;
+				clear: both;
+			} 同时使用才有效-->
+			<div class="z4"> </div>
+		</div>
+
+	</body>
+</html>

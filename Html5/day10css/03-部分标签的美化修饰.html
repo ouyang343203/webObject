@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>部分标签的美化修饰</title>
+		<style>
+			ul {
+				/* 清除ul自带的内外边距 */
+				margin: 0;
+				padding: 0;
+				/* 清除默认的小圆点 */
+				list-style: none;
+			}
+
+			input {
+				border: 1px solid #f00;
+				/* 取消外轮廓线*/
+				outline: none;
+			}
+			
+			/* 改变光标的显示类型 */
+			.a{
+				/* 小手 */
+				cursor: pointer;
+			}
+			
+			.b{
+				/* 默认箭头*/
+				cursor: default;
+			}
+			.c{
+				/* 十字光标*/
+				cursor: crosshair;
+			}
+			
+			.d{
+				/* 等待*/
+				cursor: wait;
+			}
+			
+			.f{
+				/* 等待*/
+				cursor: move;
+			}
+			.g{
+				/* 文本输入符*/
+				cursor: text;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class="a">道路千万条</li>
+			<li class="b">安全第一条</li>
+			<li class="c">行车不规范</li>
+			<li class="d">情人两行泪</li>
+			<li class="f">请安全行驶</li>
+			<li class="g">温馨提示!</li>
+		</ul>
+
+		<hr>
+
+		用户名输入框<input type="text">
+
+
+
+	</body>
+</html>

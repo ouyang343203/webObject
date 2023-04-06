@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>小手无限次练习</title>
+		<style>
+			img{
+		    	width: 100px;	
+				/* 调用动画：关键针名称：move  执行时间：3S  匀速  无限次*/
+				animation: move 0.5s linear infinite;
+			}
+			
+			/* 2.关键帧动画: @keyframes后是自定义名称，不一定叫move，但要见名知意 */
+			@keyframes move {
+			
+			/*注意不要只有0％与100％，这样全部时间都给了前半程后半程下移完毕一瞬间就回去了，太猛应该是先向下位移30px，再慢慢回去，来回都是匀速*/
+			
+				/* 动画初始值 */
+				0% {
+					transform: translateY(0);
+				}
+			
+				50% {
+					transform: translateY(30%);
+					background-color: #0f0;
+			
+				}
+			
+				/* 动画完成后的样式 */
+				100% {
+					transform: translateY(0);
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<img src="./img/hand.png" alt="">
+
+	</body>
+</html>

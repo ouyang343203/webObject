@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浮动高度坍塌解决方案2</title>
+
+		<!-- 
+          解决高度坍塌的场景二：当父元素设置了BFC，子元素浮动，父元素高度会根据浮动后子元素的高度自动适配 主要应用于子元素未知高度切子元素不会超出父级范围（BFC形成条件：overflow：hidden/scroll/auto）
+        -->
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.server {
+				background-color: #e8e8e8;
+			}
+
+			.center {
+				width: 1000px;
+				margin: 0 auto;
+			}
+
+			ul {
+				/* 清除默认的小圆点 */
+				list-style: none;
+				/* 第一种方案通过触发BFC来解决坍塌问题 */
+				overflow: hidden;
+				/* 第二种方案通过给父元素设置高度支撑 */
+				/* height: 181px; */
+			}
+
+			.server .item {
+				box-sizing: border-box;
+				width: 250px;
+				padding: 50px 0;
+				border: 1px solid #f00;
+				float: left;
+			}
+
+			.server .item img {
+				/* 将图片变成块才能使用 margin: 0 auto*/
+				display: block;
+				margin: 0 auto;
+			}
+
+			.server .item p {
+				/*这里的居中指的是让块级或者行内块中的文本图片等水平居中*/
+				text-align: center;
+			}
+		</style>
+
+
+	</head>
+	<body>
+		<div class="server">
+			<div class="center">
+				<ul>
+					<li class="item">
+						<img src="./img/item.png" alt="">
+						<p>品质保障</p>
+					</li>
+
+					<li class="item">
+						<img src="./img/item.png" alt="">
+						<p>私人定制</p>
+					</li>
+
+					<li class="item">
+						<img src="./img/item.png" alt="">
+						<p>学员特供</p>
+					</li>
+
+					<li class="item">
+						<img src="./img/item.png" alt="">
+						<p>专属特权</p>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</body>
+</html>

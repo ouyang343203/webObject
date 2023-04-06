@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>下拉选择框练习</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.search {
+				width: 300px;
+				border: 2px solid red;
+				/* 给父级设置相对定位是为了给使用就对定位的子元素作为参照物 */
+				position: relative;
+			    margin: 0 auto;
+			}
+
+			.search input {
+				/* 让输入框的宽度撑满父级 */
+				width: 100%;
+				height: 32px;
+				background-color: yellow;
+				/* 去除边框 */
+				border: none;
+				/* 去除边框的外轮廓线 */
+				outline: none;
+				/* 增加内间距让文字不要太贴边 */
+				padding: 0 5px;
+				/* 切换成边框盒子模型，防止内间距增加而导致的元素总宽度变大*/
+				box-sizing: border-box;
+			}
+
+			.search .select-option {
+				background-color: brown;
+				position: absolute;
+				top: 34px;
+				/* 使用绝对定位后脱离文档流不能在继承父级的宽度需要自己设置自己的宽度 */
+				width: 290px;
+				padding: 0 5px;
+				/*页面刚刚刷新的时候隐藏 */
+				display: none;
+			}
+
+			/* 当搜索宽获得焦点时显示搜索建议 */
+			.search input:focus+div {
+				display: block;
+			}
+
+			.search .select-option p {
+				border-bottom: 2px dotted #ddd;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div id="" class="search">
+			<input type="text" placeholder="请输入搜索内容">
+			<div class="select-option">
+				<p>搜索词条1</p>
+				<p>搜索词条2</p>
+				<p>搜索词条3</p>
+				<p>搜索词条4</p>
+			</div>
+		</div>
+
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit veritatis et quod nam sunt facilis
+			minus, quaerat itaque dicta voluptate accusamus quasi cupiditate dolorem soluta eveniet sed, ad amet
+			distinctio.</p>
+	</body>
+</html>

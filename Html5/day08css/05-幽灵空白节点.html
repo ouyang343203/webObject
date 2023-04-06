@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>幽灵空白节点</title>
+		
+		<style>
+			.box{
+				background-color: #00f;
+			}
+		
+			/* 幽灵空白的节点的解决方法就是将图片的display改成块级元素 */
+	        img {
+		        display: block;
+	         }
+		</style>
+	</head>
+	<body>
+
+		<div class="box">
+			<img src="./img/pro.jpg" alt="">
+		</div>	
+		
+	</body>
+</html>

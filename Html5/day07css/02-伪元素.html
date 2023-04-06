@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			h1::after{
+				content: '孔子-春秋';
+			}
+			
+			/* 在每条论论语前面添加子曰 */
+			li::before{
+			  content: '子曰:';	
+			  font-weight: bold;
+			}
+			
+			/* 在每条论论语后面添加--摘自《论语》 */
+			ul::after{
+			  content: '--摘自《论语》';	
+			  color: aquamarine;
+			}
+			
+			/* 在每条论论语后面添加--摘自《论语》 */
+			a+a::before{
+			  content: '>';	
+			  color: red;
+			}
+			
+			a{
+			  color: #ccc;
+			}
+			
+			nav{
+              border:1px solid red ;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>论语</h1>
+		<hr>
+		<ul>
+		  <li>温故知新，可以为师</li>
+		  <li>学而时习之，不亦乐乎</li>
+		  <li>温故知新，可以为师</li>
+		  <li>温故知新，可以为师</li>
+		</ul>
+		<hr>
+	
+	<!-- 给导航上的a标签添加啊？ -->
+		<div class="nav">
+			<a href="./01.html">首页</a>
+			<a href="./01.html">学习用品</a>
+			<a href="./01.html">私人定制</a>
+		</div>
+	</body>
+</html>

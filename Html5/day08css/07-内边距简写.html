@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box {
+				/* 内边距简写 */
+				/* padding: 10px;/*上下左右边距都是10 */
+				/* padding: 10px 20px;/*上下10px，左右20px*/
+
+				padding: 10px 20px 30px;
+				/**上左下 右边h会自动默认等于左边*/
+				/* padding: 10px 20px 30px 40px;/*上右下左*/
+			    background-color: red;
+				width: 100px;
+				height: 100px;
+			}
+
+			span {
+				/* 内敛元素的垂直padding视觉生效但不起作用,这里不包括img标签*/
+				background-color: rgba(255, 0, 0, 0.3);
+				padding: 20px 80px;
+				margin: 80;
+				width: 100px;
+				/* display: block; */
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="box">
+			我是一个div
+		</div>
+		<span>我是span</span>
+		<!-- <span>我是span</span><span>我是span</span><span>我是span</span> -->
+		<div class="box">
+			我是一个div
+		</div>
+	</body>
+</html>

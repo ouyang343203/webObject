@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./code/css/bootstrap.css" />
+    <link rel="stylesheet" href="./code/css/bootstrap-icons.css" />
+    <script src="./code/js/bootstrap.bundle.js"></script>
+    <title>撑满视口宽高的做法</title>
+</head>
+
+<body>
+    <!--注意容器不能用container他是设置版心使用 因为定宽容器不是撑满整个屏幕宽度的，左右有留白  需要使用container-fluid-->
+    <div class="container-fluid">
+        <!-- 注意这里vh/vw的值只有100   -->
+        <div class="vh-100 vw-100 bg-secondary"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 过渡可以为元素在不同状态之间切换的时候定义不同的过渡效果
+			 
+			 
+			 transition过渡是由下面4个分属性组合：
+			 1、(a)transition-property：过渡的名称； 要变化的属性名，默认值是all，代表所有变化属性
+			    (b)transition-duration：过渡的时间； 默认Os，时间单位使用秒
+			    (c)transition-delay：过渡的延迟时间；不会马上出现效果，要等一会才执行，默认Os，时间单位使用秒
+			    (d)transition-timing-function：过渡的方式：ease(默认先快后慢) linear(匀速) ease-in(慢慢变快) ease-out(慢慢变慢)  ease-in-out(和第一个很像) 参考：https://cubic-bezier.com/#.25,.1,.25,1.
+			 
+			 
+			 2、过渡的简写：
+			 transition 过渡的简写值
+			 transition：all 1s 2s ease；过渡名称 过渡间 延迟时间 过渡方式
+			 transition：1s 2s；延迟2s后给所有过渡效果按ease的效果执行1s
+			 transition：2s；过渡时间2s
+			 注意：过渡时间与延迟时间同时出现时，有先后顺序，过渡时间在前，延迟时间在后，执行的效果则是先延迟 后过渡
+			 使用多组过渡时，延迟时间一定是之前所有组过渡的执行时间的累加
+			 
+			 3、常用的可过渡属性：
+			 尺寸类 、文字渲染类 内外间距 文本(颜色 修饰线)
+			 边框、圆角、阴影、透明度、背景、定位
+			 参考地址：https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_animated_properties 里面右边出现的基本都是可以使用的过渡属性
+	
+			 */
+			.box1 {
+				background-color: #000;
+				height: 40px;
+				border-radius: 20px;
+				width: 150px;
+				/* 过渡要放在初始样式中 */
+				transition: 20s;
+				/*前面1秒是过渡时间 后面5s延迟时间 过渡时间在前  延迟时间在后*/
+				/* transition: 1s 8s; */
+			}
+
+			.box1:hover {
+				background-color: #f00;
+				/* 添加过渡时间不能写在hover中，否则鼠标移开的时候还是很突兀没有过渡效果 */
+				/* transition: 2s; */
+			}
+
+
+			.box2 {
+				background-color: #00f;
+				height: 100px;
+				width: 100px;
+				margin-top: 20px;
+				/* 过渡要放在初始样式中 */
+				transition: 2s;
+
+				/*2秒内过渡背景颜色 */
+				transition: 2s background-color;
+
+				/* 两秒内过渡颜色和圆角 */
+				transition: 2s background-color, 2s border-radius;
+			}
+
+			.box2:hover {
+				background-color: #f00;
+				border-radius: 50%;
+			}
+			
+			.box3 {
+				background-color: #00f;
+				height: 100px;
+				width: 100px;
+				margin-top: 20px;
+				/* 过渡要放在初始样式中 */
+				/* transition: 2s; */
+
+				/* 同时选中所有效果，2秒变完 */
+			    /*transition: 2s background-color; */
+
+				/* 2s内先过渡背景色，延迟2s后，在2秒改变圆角 */
+				transition: 2s/*2s过渡改变颜色*/background-color, 2s/*过渡时间*/ 2s/*颜色改变完在等两秒2秒改变圆角即延迟时间*/border-radius;
+			}
+
+			.box3:hover {
+				background-color: #f00;
+				border-radius: 50%;
+			}
+			
+			.box4 {
+				background-color: #00f;
+				height: 100px;
+				width: 100px;
+				margin-top: 20px;
+				/* 全部过渡 执行1秒钟 等待2秒 现行匀速过渡*/
+				transition: all 1s 2s linear;
+			}
+			.box4:hover {
+				background-color: #f00;
+				border-radius: 50%;
+			}
+			
+			.box5 {
+				margin-top: 20px;
+				background-color: #0f0;
+				height: 100px;
+				width: 100px;
+				/* 注意并不是所有的属性都剋使用过渡效果
+				 想让box缓慢消失，发现过渡属性无效
+				 display的过渡属性无效
+				 */
+				transition: 2s;
+			}
+			.box5:hover {
+			    display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<div class="box4"></div>
+		<div class="box5"></div>
+
+	</body>
+</html>

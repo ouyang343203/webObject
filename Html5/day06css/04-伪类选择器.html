@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>伪类选择器</title>
+		
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+		}
+		
+		/* 增加伪类hover，设置div鼠标悬停时的样式 */
+	    .box:hover{  /*设置div鼠标悬停时的样式*/
+		    background-color: red;
+	    }
+		
+		.box:active{ /*设置div激活时的状态*/
+		    background-color: blue;
+		}
+		
+		/* 设置超链接未被访问过的颜色 */
+		a:link{
+			color:green;
+		}
+	
+		/* 设置超链接被访问过的颜色 */
+		a:visited{
+			color:gray;
+		}
+		
+		
+		/* 增加伪类hover，设置超链接鼠标悬停时的样式 */
+		a:hover{  /*设置div鼠标悬停时的样式*/
+		    color: orange;
+		}
+		
+		/* 增加伪类hover，设置超链接激活时的状态ji */
+		a:active{/*设置div鼠标悬停时的样式*/
+		    background-color: red;
+		}
+		/* 
+		 1、注意<a>超链接标签的四个状态（link visited hover active）必须是按照这个指定的顺序
+		 2、超连接标签默认未被访问过的字体颜色是蓝色，激活是红色，访问过是紫色
+		 */
+		
+		/* 选中输入框获得焦点事件后，被禁变成黄色 */
+		input:focus{
+			background-color: yellow;
+		}
+		
+	</style>
+	</head>
+	<body>
+		
+	    <div class="box"></div>	
+		<hr>
+		<a href="http://www.tmooc.cn">达内慕课网</a>
+		<a href="http://www.baidu.com">百度</a>
+        <hr>
+		
+		用户名输入框<input type="text"><span>请验证自己的用户是否正确</span>
+	</body>
+</html>

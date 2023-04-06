@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>from表单联系</title>
+
+	<script type="text/javascript">
+		function check() {
+			alert(register_form.username);
+		}
+	</script>
+</head>
+
+<body>
+	<!--form表单标签 可添加的属性 
+		action="url"  提交的地址
+		metnod="get/post" 提交方式
+		enctype="" 指定表单的数据编码方式定义表达允许传递什么类型的数据给服务器
+		只要包括：
+		enctype="application/x-www-form-urlencode"//默认值
+		enctype="multipart/form-data"//可以传递文件和任意字符
+		text/plain允许传递普通字符(& = * @等符号都不是普通字符).
+		-->
+	<!-- 表单的空间分类
+		 (1)input 输入框元素 单标签元素
+		 (2)select和option 下拉选择框元素 
+		 (3)textarea 多半文本域 元素
+		 (4)lable 关联控件
+		 -->
+	<form name="register_form" action="#" method="GET" enctype="application/x-www-form-urlencoded">
+		<!--1 普通文本输入框 
+			type:设置输入框的类型控制  text-类型普通文本输入框   password-类型密码框
+			name：是给输入框取的名字相当于是谁提交的卷子
+			value:是输入框输入的值 如果写了代码中写值他会默认赋值给这个input的text值 不写的话这个value也是默认存在的 只是没有显示
+			后期获取value的方式和name的方式我们可以给 input去一个标识id 通过
+			id.value 可以获取到jack
+			placeholder：提示文字
+			-->
+		用户名: <input id="14" type="text" value="jack" name="username" maxlength="20" placeholder="请输入用户名"><br>
+
+		<!--2 密码框 -->
+		密码: <input id="15" type="password" name="password" maxlength="20" placeholder="请输入密码"><br>
+
+		<!-- type="submit" 按钮 -->
+		<input type="submit" value="提交" onclick=check()>
+
+		<!-- type="button" 恢复页面的初始状态 -->
+		<input type="reset" value="重置">
+
+		<!-- button普通按钮:type="button" 用来绑定事指定对应的js考本 -->
+		<input type="button" value="按钮title">
+		<hr>
+
+		<!--3 单选框/多选
+			属性：
+			type：radio(单选)  checkbox(多选)
+			name:(必须添加)作为控件的分组名称否者不能有单选的效果
+			valu:(必须添加否则提交永远是on)作为选择的值
+			checked：默认选项
+			-->
+		<!-- 单选标签：:type="radio -->
+		<input type="radio" value="1" name="gender" checked> 男
+		<input type="radio" value="0" name="gender"> 女
+		<br>
+		<!-- 多选框标签 :type="checkbox"-->
+		爱好
+		<input type="checkbox" name="like" value="1"> 语文
+		<input type="checkbox" name="like" value="2"> 数学
+		<input type="checkbox" name="like" value="3"> 英语
+		<input type="checkbox" name="like" value="4"> 物理
+		<input type="checkbox" name="like" value="5" checked> 化学
+		<br>
+		<hr>
+		喜欢的小说
+		<input type="checkbox" name="xs" value="1"> 西游记
+		<input type="checkbox" name="xs" value="2"> 红楼梦
+		<input type="checkbox" name="xs" value="3" checked> 水浒传
+		<input type="checkbox" name="xs" value="4"> 聊斋
+		<br>
+		<hr>
+		<!--4 文件上传 
+			使用的前提：
+			method="post"
+			enctype= "multipart/form-data"//可以传递文件和任意字符 这个在form中设置
+			multiple:表示可以提交多个文件 是一个单值属性只有一个选项
+			-->
+		请选择你要上传的文件<input type="file" name="ufile" multiple>
+		<br>
+
+		<!--5下拉选择框标签
+			注意如果设置value="0"则提交的时候就是value的值 如果没有设置提交的就是option标签的文本
+			selected:设置默认选项
+			-->
+		爱吃的菜
+		<select name="food" multiple>
+			<option value="0">沙县小吃</option>
+			<option value="1">兰州拉面</option>
+			<option value="2">隆江猪脚</option>
+			<option value="3" selected>南昌拌粉</option>
+			<option value="4">长沙臭豆腐</option>
+		</select>
+		<br>
+		<hr>
+		<!-- 多选需要按住ctrl键盘 -->
+		最喜欢的运动
+		<select name="sports">
+			<option value="0">跑步</option>
+			<option value="1">兰州拉面</option>
+			<option value="2" selected>游泳</option>  <!--此处的selected 表示默认选中 -->
+			<option value="3">拳击</option>
+			<option value="4">舞蹈</option>
+		</select>
+		<hr>
+		<!-- 多行文本标签 
+			style="resize: none;" 表示不允许用户修改大小
+			cols="30"文本域的例数，改变的是宽度
+			rows="10"文本域的函数，改变的是高度
+			-->
+		请在此留下你宝贵的建议：
+		<textarea name="content" id="" cols="30" rows="2" style="resize: none;"></textarea>
+		<br>
+		<hr>
+
+		<!-- 关联控件 
+			就是将一般的协议和打勾的地方获得相应
+			for="y":将label和 input关联获得关联 y为设置关联的id值
+			-->
+		<input type="checkbox" name="yes" value="1" id="13">
+		<label for="13">请同意次协议</label>
+
+	</form>
+</body>
+
+</html>

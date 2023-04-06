@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./code/css/bootstrap.css" />
+  <link rel="stylesheet" href="./code/css/bootstrap-icons.css" />
+  <script src="./code/js/bootstrap.bundle.js"></script>
+  <title>徽章badge,图标练习</title>
+
+  <!-- 参考地址：https://v5.bootcss.com/docs/5.3/components/badge/#examples 
+       1．徽章 badge
+      https://v5.bootcss.com/docs/components/badge/小
+      效果：在一个固定区域（比如按钮）上添加一个类似于角标的内容
+      .badge 徽章的基类，徽章一般用内联元素，比如span.
+      可以修改徽章的颜色 .bg-｛color｝
+      可以修改徽章的形状，比如rounded-pill可以修改成胶囊形
+      可以修改徽章的位置，比如使用子绝父相让徽章定位到父元素的某个位置
+
+      2、图标库地址：https://v5.bootcss.com/docs/5.3/extend/icons/#bootstrap-icons
+      图标库 https：／／icons.bootcss.com／
+       图标其实就是文字，我们可以在图标库中找到自己需要的图标名称
+      使用方法：内联元素的class赋值 bi-｛图标名｝就可以引入该图标
+      可以修改图标的颜色：text-｛color｝
+      可以修改图标的大小：font-size
+     注意：如果引入图标未生效，可能是生产文件中未更新，没有此图标
+   -->
+
+</head>
+
+<body>
+  <div class="container pt-5">
+    <!-- 按钮父类使用相对定位定位 -->
+    <button type="button" class="btn btn-primary position-relative">
+      消息
+      <!-- 子元素使用绝对定位 -->
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+</span>
+    </button>
+    <br>
+    <!-- 系统icon使用方法bi-系统图片名称，图片名称在https://v5.bootcss.com/docs/5.3/extend/icons/#bootstrap-icons可以找到 
+    注意：图标实际上还是一个文字元素可以使用text 相关属性包括加粗，颜色，字体大小等
+    -->
+    <span class="bi-envelope text-danger" style="font-size:30px"></span>
+    <span class="bi-alipay text-primary" style="font-size:30px"></span>
+  </div>
+</body>
+
+</html>

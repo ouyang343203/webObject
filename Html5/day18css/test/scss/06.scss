@@ -1,0 +1,67 @@
+
+ /*
+一：高级条件判断语法
+
+1．条件语句
+＠if（判断条件）｛条件为真时｝＠else｛条件为假｝
+＠if（判断条件1）｛条件1为真时｝＠else if（判断条件2）｛条件2为真时｝＠else｛以上条件均不满足执行这
+｝注意：多条件判断在sass中不能使用＆｜要用关键词 and or
+
+ */
+
+ @mixin btn($w,$h){
+    width: $w;
+    height:$h;
+    background-color: red;
+    border-radius: 5px;
+    @if($w>100px and $h>50px){
+       box-shadow: 5px 5px 5px #666;
+    }@else{
+       box-shadow: 2px 2px 2px #666;
+    }
+ }
+
+ .box16{
+    @include  btn(120px,60px)
+ }
+
+ .box17{
+    @include  btn(120px,60px)
+ }
+ 
+ 
+/*
+   一：高级循环判断语法
+*/
+
+//不包含5
+@for $i from 1 to 5 {
+
+    ul{
+        li{
+            height: 20px;
+            background-color: rebeccapurple;
+            width: 100px+$i*10;
+        }
+        li:nth-child(#{$i}){
+           border-width:#{$i}px; 
+        }
+    }
+
+}
+
+//包含5
+@for $i from 1 through 5 {
+
+    ul{
+        li{
+            height: 20px;
+            background-color: rebeccapurple;
+            width: 100px+$i*10;
+        }
+        li:nth-child(#{$i}){
+           border-width:#{$i}px; 
+        }
+    }
+
+}

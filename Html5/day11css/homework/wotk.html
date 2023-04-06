@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				/* float: left; */
+			}
+			.center {
+				width: 1000px;
+				margin: 0 auto;
+				/* background-color: palegreen; */
+			}
+			
+			a{
+				text-decoration: none;
+			}
+			
+			/* 自定义样式设置 */
+			.main{
+				background-color: #e8e8e8e8;
+			}
+			/* 处理浮动导致的坍塌 */
+			.main ul{
+				overflow: hidden;
+			}
+			
+			.main li{
+				width: 190px;
+				background-color: white;
+				margin: 5px 5px;
+				float: left;
+				padding: 20px 10px;
+				/* 增加内边距会使盒子的元素变大，所以要变成边框盒子 */
+				box-sizing: border-box;
+			}
+			
+			/* 处理列表的图片样式  li 的宽度是190 img的宽度是152   152/190就是图片的*/
+			.main li img{
+				/* width: 80%; */
+				width: 152px;
+				/* 将图片变成块级元素才能做据中处理 */
+				display: block;
+			    margin: 0 auto;
+			}
+			
+			.main li a{
+				font-size: 12px;
+				display: block;
+				margin:10px 0;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<!-- 最外层功能模块 -->
+		<div class="main">
+			<!-- 版心 -->
+			<div class="center">
+
+				<ul>
+					<li>
+						<img src="./img/good2.png" alt="">
+						<a href="#">西门子开关五空插座强点电源</a>
+						<h4>¥3099.00</h4>
+					</li>
+
+					<li>
+						<img src="./img/good2.png" alt="">
+						<a href="#">西门子开关五空插座强点电源</a>
+						<h4>¥3099.00</h4>
+					</li>
+
+					<li>
+						<img src="./img/good2.png" alt="">
+						<a href="#">西门子开关五空插座强点电源</a>
+						<h4>¥3099.00</h4>
+					</li>
+
+					<li>
+						<img src="./img/good2.png" alt="">
+						<a href="#">西门子开关五空插座强点电源</a>
+						<h4>¥3099.00</h4>
+
+					</li>
+
+					<li>
+						<img src="./img/good2.png" alt="">
+						<a href="#">西门子开关五空插座强点电源</a>
+						<h4>¥3099.00</h4>
+					</li>
+
+					<li>
+						<img src="./img/good2.png" alt="">
+						<a href="#">西门子开关五空插座强点电源</a>
+						<h4>¥3099.00</h4>
+
+					</li>
+
+					<li>
+						<img src="./img/good2.png" alt="">
+						<a href="#">西门子开关五空插座强点电源</a>
+						<h4>¥3099.00</h4>
+					</li>
+
+					<li>
+						<img src="./img/good2.png" alt="">
+						<a href="#">西门子开关五空插座强点电源</a>
+						<h4>¥3099.00</h4>
+					</li>
+
+					<li>
+						<img src="./img/good2.png" alt="">
+						<a href="#">西门子开关五空插座强点电源</a>
+						<h4>¥3099.00</h4>
+					</li>
+
+					<li>
+						<img src="./img/good2.png" alt="">
+						<a href="#">西门子开关五空插座强点电源</a>
+						<h4>¥3099.00</h4>
+					</li>
+
+				</ul>
+			</div>
+
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="#">
+			<table>
+				<!-- tr标签表示行 td标签表示列 -->
+				<!--用户名  -->
+				<tr>
+					<td>用户名:</td>
+					<td><input type="text" name="username"></td>
+				</tr>
+			
+				<!--密码  -->
+				<tr>
+					<td>密码:</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+			
+				<!--籍贯  -->
+				<tr>
+					<td>籍贯:</td>
+					<td><select name="address" id="">
+							<option value="bj">北京</option>
+							<option value="sh">上海</option>
+							<option value="jx" selected>江西</option>
+							<option value="gx">广西</option>
+							<option value="qh">青海</option>
+			
+						</select></td>
+				</tr>
+			
+				<!-- 性别 -->
+				<tr>
+					<td>性别:</td>
+					<td>
+						<input type="radio" value="0" name="gender" checked> 男
+						<input type="radio" value="1" name="gender">女
+							<input type="radio" value="2" name="gender">保密
+						</td>
+			
+				</tr>
+			
+				<!-- 头像 -->
+				<tr>
+					<td>头像:</td>
+					<td><input type="file" name="ufile"></td>
+				</tr>
+			
+				<!-- 工作地点 -->
+				<tr>
+					<td colspan="2">愿意找到以下城市工作:</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td ><select name="city" id="" multiple size="5">
+							<option value="0">北京</option>
+							<option value="1">上海</option>
+							<option value="2">广州</option>
+							<option value="3" selected>深圳</option>
+							<option value="4">杭州</option>
+							
+						</select>
+					</td>
+				</tr>
+						
+				<!-- 留言 -->
+				<tr>
+					<td>留言:</td>
+					<td><textarea name="content" id="" cols="30" rows="1" style="resize: none;"></textarea></td>
+				</tr>
+			
+				<!-- 提交  -->
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" value="提交">
+						<input type="submit" value="清除">
+					</td>
+				</tr>
+			
+				<tr>
+					<td></td>
+					<td>
+						<input type="checkbox" name="yes" value="1" id="13">
+						<label for="13">不要公开我的信息</label>
+					</td>
+				</tr>
+			
+			</table>
+			
+		</form>
+	
+	</body>
+</html>

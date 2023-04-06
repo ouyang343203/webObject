@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        /* 高度给父级撑满 */
+        height: 100vh;
+        /* flex的子元素没给高默认会使用父亲的高度 */
+        display: flex;
+    }
+
+    .left {
+        background-color: #f00;
+        /* 0表示不放大也不缩小 */
+        flex: 0/*控制不放大*/ 0/*控制不缩小*/ 230px;/*控制长度*/
+    }
+
+    .right {
+        background-color: #00f;
+        flex: 1/*控制放大*/ 1/*控制缩小*/;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

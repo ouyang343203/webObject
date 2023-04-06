@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>练习</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.center {
+				width: 1000px;
+				margin: 0 auto;
+				background-color: #aaa;
+			}
+
+			.main .center>div {
+				margin-bottom: 14px;
+				overflow: hidden;
+			}
+
+			.row1 .col1-1 {
+				width: 610px;
+				height: 376px;
+				background-color: #e8e8e8;
+				float: left;
+				margin-right: 14px;
+			}
+
+			/* 第一楼第一列文本 */
+			.main .row1 .col1-1 .text,
+			.main .row1 .col1-2 .text {
+				position: relative;
+				top: 50px;
+				width: 50%;
+				left: 5%;
+			}
+
+			.main h3 {
+				font-size: 22px;
+				font-weight: 10px;
+				margin-bottom: 10px;
+			}
+
+			.main .text p {
+				font-size: 12px;
+				margin-bottom: 10px;
+			}
+
+			.main .text h4 {
+				font-size: 20px;
+				color: #0aa1ed;
+				margin-bottom: 10px;
+			}
+
+			.main .text button {
+				background-color: #0aa1ed;
+				color: #fff;
+				font-size: 18px;
+				padding: 10px 20px;
+				border: none;
+				border-radius: 5px;
+			}
+			
+			.row1 .col1-2 {
+				width: 376px;
+				height: 376px;
+				background-color: #e8e8e8;
+				float: left;
+			}
+	
+			.main .center .row1 .col1-1,
+			.main .center .row1 .col1-2 {
+				position: relative;
+			}
+
+			/* 第一行第1列的图片与第一列行第二行的图片设置为距离底部20px 距离右侧3% */
+			.pic {
+				position: absolute;
+				bottom: 20px;
+				right: 20px;
+				width: 200px;
+				height: 200px;
+			}
+
+			/*****************************二楼布局********************************** */
+			/* 二楼的第1列 */
+			.main .center .row2 .col2-1 {
+				width: 364px;
+				height: 234px;
+				background-color: #e8e8e8;
+				float: left;
+			}
+			
+			.main .center .row2 .col2-1 h4{
+				padding-left: 10px;
+				background-color: #0aa1ed;
+				color:#e8e8e8;
+				line-height: 40px;
+			}
+					
+			.main .center .row2 .col2-1 .txt{
+				color:#e8e8e8;
+			}
+			
+			.main .center .row2 .col2-1 .txt .item {
+				margin-top: 20px;
+				margin-left: 5px;
+			}
+			
+			.main .center .row2 .col2-1 .txt .item h5 {
+					color:#0aa1ed;
+					font-size: 13px;
+			}
+			
+			.main .center .row2 .col2-1 .txt .item a{
+				color:#0aa1ed;
+				text-decoration:none;
+				font-size: 12px;
+			}
+		
+			/* 二楼第2列 */
+			.main .center .row2 .col2-2>div {
+				width: 198px;
+				height: 234px;
+				float: left;
+				margin-left: 14px;
+				padding: 10px;
+				box-sizing: border-box;
+				background-color: #e8e8e8;
+				/* 让块级行内元素居中 主要是让卡片的图片文字居中 */
+				text-align: center;
+			}
+
+			.main .center .row2 .col2-2 . {
+				float: left;
+			}
+
+			.main .center .row2 .col2-2 .box2 {
+				float: left;
+			}
+
+			.main .center .row2 .col2-2 .box3 {
+				float: left;
+			}
+
+			/* 设置二楼二列卡片内容 */
+			.main .center .row2 .col2-2 img {
+				/* 
+				仅让图片居中
+				margin: 0 auto;
+				display: block; */
+				height: 80px;
+				width: 100%;
+			}
+
+			.main .center .row2 .col2-2 p {
+				font-size: 12px;
+				padding-bottom: 10px;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+
+			.main .center .row2 .col2-2 h5 {
+				margin: 10px 0;
+			}
+
+			.main .center .row2 .col2-2 button {
+				background-color: #0aa1ed;
+				color: #fff;
+				font-size: 15px;
+				padding: 8px 16px;
+				border: none;
+				border-radius: 5px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="main">
+			<div class="center">
+
+				<div class="row1">
+					<!-- 第一楼第一块 -->
+					<div class="col1-1">
+						<!-- 文本区域的相对定位 -->
+						<div class="text">
+							<h3>灵越燃7000系列</h3>
+							<p>酷睿双核5处理器｜256GB SSD｜8GB内存英特尔HD显卡620含共享显卡内存</p>
+							<h4>¥4999.00</h4>
+							<button>查看详情</button>
+						</div>
+
+						<img src="./相对定位/img/goods1.png" class="pic" alt="">
+
+					</div>
+
+					<!-- 第一楼第二块 -->
+					<div class="col1-2">
+						<!-- 文本区域的相对定位 -->
+						<div class="text">
+							<h3>灵越燃7000系列</h3>
+							<p>酷睿双核5处理器｜256GB SSD｜8GB内存英特尔HD显卡620含共享显卡内存</p>
+							<h4>¥4999.00</h4>
+							<button>查看详情</button>
+						</div>
+						<img src="./相对定位/img/goods1.png" class="pic" alt="">
+					</div>
+
+				</div>
+
+				<!-- 第二楼 -->
+				<div class="row2">
+					<!-- 第二楼第一块 -->
+					<div class="col2-1">
+						<h4>电脑,办公</h4>
+						<div class="txt">
+							<div class="item">
+								<h5>电脑整机</h5>
+								<a href="#">笔记本</a>
+								<a href="#">台式机</a>
+								<a href="#">游戏机</a>
+								<a href="#">一体机</a>
+								<a href="#">服务器</a>
+								<a href="#">联想</a>
+							</div>
+							<div class="item">
+								<h5>电脑整机</h5>
+								<a href="#">笔记本</a>
+								<a href="#">台式机</a>
+								<a href="#">游戏机</a>
+								<a href="#">一体机</a>
+								<a href="#">服务器</a>
+								<a href="#">联想</a>
+							</div>
+
+							<div class="item">
+								<h5>电脑整机</h5>
+								<a href="#">笔记本</a>
+								<a href="#">台式机</a>
+								<a href="#">游戏机</a>
+								<a href="#">一体机</a>
+								<a href="#">服务器</a>
+								<a href="#">联想</a>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- 第二楼第二块 -->
+					<div class="col2-2">
+						<!-- 2楼中第二列3个小块 -->
+						<div class="">
+							<img src="./相对定位/img/goods1.png" alt="">
+							<p>戴尔(DELL)XPS13-9360-R1609 13.3英寸微边框笔记本电脑</p>
+							<h5>¥4600</h5>
+							<button>查看详情</button>
+						</div>
+						<div class="box2">
+							<img src="./相对定位/img/goods1.png" alt="">
+							<p>戴尔(DELL)XPS13-9360-R1609 13.3英寸微边框笔记本电脑</p>
+							<h5>¥4600</h5>
+							<button>查看详情</button>
+						</div>
+						<div class="box3">
+							<img src="./相对定位/img/goods1.png" alt="">
+							<p>戴尔(DELL)XPS13-9360-R1609 13.3英寸微边框笔记本电脑</p>
+							<h5>¥4600</h5>
+							<button>查看详情</button>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+</html>

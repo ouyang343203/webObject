@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				font-size: 60px;
+				text-align: center;
+				line-height: 100px;
+			}
+
+			/* 0～1之间是缩小，大于1是放大 */
+			.box1 {
+				background-color: #f00;
+				/* X轴方向放大两倍 */
+				transform: scaleX(2);
+
+				/* X轴方向放缩小0.5倍 */
+				transform: scaleX(0.5);
+
+				/* Y轴方向放缩小0.5倍 */
+				transform: scaleY(0.5);
+
+			}
+
+			.box2 {
+				/* Y轴方向放大两倍 */
+				transform: scaleY(2);
+				background-color: #00f;
+			}
+
+			.box3 {
+				/* 缩小的看不见 X轴和Y轴都放大放大缩小*/
+				transform: scale(0);
+				background-color: palegreen;
+			}
+
+			.box3 {
+				/* 绕Y轴旋转 */
+				background-color: saddlebrown;
+
+				/* X轴方向镜面翻转缩小0.5倍 */
+				transform: scaleX(-0.5);
+
+				/* Y轴方向镜面翻转缩小0.5倍 */
+				transform: scaleY(-0.5);
+
+				/* X轴 Y轴方双方向镜面翻转 */
+				transform: scale(-1);
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="box1">好</div>
+		<div class="box2">好</div>
+		<div class="box3">学</div>
+		<div class="box4">习</div>
+
+	</body>
+</html>

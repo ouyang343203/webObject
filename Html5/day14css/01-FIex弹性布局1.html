@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>flex 弹性布局</title>
+		<!--
+		一： flex简述
+		 flex 布局也叫做flexbox（弹性盒），针对于单行多列布局效果，有很强大的布局分配能力在没有flex之前，一般使用流式布局、浮动布局、定位布局等等 他默认可以自动实现横向布局且自动收缩等
+		 
+		 flex 布局的优势：
+		 具有很多的自带属性来完成分配空间的效果，不需要计算，分配合理，新版本的浏览器都兼容
+		 
+		 flex 布局的劣势：不太适合多行多列，复杂的嵌套效果等，最终的布局效果可能不尽如人意
+		 
+		 注意事项:
+		 1．子元素需要依赖容器元素，我们控制子元素的排列不再依靠子元素自己 float
+		 2．设置父元素为弹性盒，子元素的float将失效
+		 3．切记不要把flex与浮动布局或定位布局一起使用
+		 4．使用了 display：flex;其中的子元素会＂块状，
+		 
+		 二：flex简述容器和项目概念：
+		 容器主要指的是display: flex写在谁上面的就是容器 
+		 受控于容器的元素叫项目 如下面box2是容器 里面的子元素就是项目
+		 
+		 //=============================================================================================================================
+
+		1．主轴的行模式与列模式
+		主轴有水平的，也有垂直的，水平的有两个方向：向右123向左321如评论效果．
+		竖直的有两个方向：向下123向上321．反响主要用于如评论最新的评论显示在最前面
+		
+		2、主轴的排序
+		默认的主轴的排序就是行模式从左向右排序
+		2.1）：设置主轴为行模式）
+		  flex-direction：row;设置主轴为水平行模式（行模式） 且是正向排序
+		  flex-direction：row-reverse;设置主轴为水平行模式（行模式）且反向排序
+		
+		  设置主轴为列模式）
+		  flex-direction：column;设置主轴为垂直模式（列模式）且是正向排序
+		  flex-direction：column-reverse;设置主轴为垂直模式（列模式） 且反向排序
+		
+		2.2）：设置压缩后换行模式）
+		  flex-wrap: nowrap;设置压缩后不换行默认就是这个
+		  flex-wrap: wrap;设置压缩后换行（元素内容不会被压缩只只是水平或者垂直方向缩小浏览器会让主轴或者交叉轴方向换行）
+		  flex-wrap: wrap-reverse;设置缩小后换行且反向排列
+	
+		3 、简写主轴排序与换行的简写属性：flex-flow 第一个值是主轴排序，第二个值是是否换行
+		3.1）行模式简写
+		/* 主轴与换行的简写形式:水平行模式行模式 换行 */
+		flex-flow:row wrap;
+		
+		/* 主轴与换行的简写形式:水平行模式正向排序 不换行 */
+		/* flex-flow:row nowrap; */
+		
+		/* 主轴与换行的简写形式:水平行模式反向排序 换行 */
+		/* flex-flow:row-reverse wrap; */
+		
+		/* 主轴与换行的简写形式:水平行模式反向排序 不换行 */
+		/* flex-flow:row-reverse nowrap; */
+		
+		
+		3.2）列模式简写
+		注意：如果是列模式 换行的话记得给容器设置高度，否则不会换行
+		/* 主轴与换行的简写形式:水平行模式行模式 换行 */
+		flex-flow:column wrap;
+
+		/* 主轴与换行的简写形式:水平行模式正向排序 不换行 */
+		/* flex-flow:column nowrap; */
+		
+		/* 主轴与换行的简写形式:水平行模式反向排序 换行 */
+		/* flex-flow:column-reverse wrap; */
+		
+		/* 主轴与换行的简写形式:水平行模式反向排序 不换行 */
+		/* flex-flow:column-reverse nowrap; */
+		  
+		  
+		4：主轴和交叉轴
+		 在我们使用flex布局时，要想到两条轴线
+		 主轴：先要看是行模式还是列模式
+		 行模式的主轴是水平方向的，列模式的主轴是垂直方向的
+		 交叉轴：永远垂直于主轴的轴线  
+		  
+		 -->
+		<style>
+			/* box1使用的是流逝布局*/
+			.box1 {
+				background-color: yellow;
+			}
+
+			.box1>div {
+				width: 100px;
+				height: 100px;
+				border: 2px solid #000;
+				font-size: 30px;
+			}
+
+			/* 使用弹性布局 */
+			.box2 {
+				height: 200px;
+				background-color: aqua;
+				/* 开启弹性布局需要给父元素设置 不是给他下面的子元素设置 */
+				display: flex;
+				/* 设置行模式正向排序（即正序排列）:row
+			   注意如把浏览其缩小他会妥协缩小元素的宽度，并且不会换行 */
+				/* flex-direction: row; */
+
+				/* 设置行模式反响排序（即倒叙排列）:row-reverse */
+				/* flex-direction: row-reverse; */
+
+				/* 设置列模式正向排序即正序排列 :column */
+				flex-direction: column;
+
+				/* 设置列模式反向排序即倒叙排列）:column-reverse  */
+				/* flex-direction: column-reverse; */
+
+				/* 设置宽度缩小后不换行 */
+				/* flex-wrap: nowrap; */
+
+				/* 设置宽度缩小后换行 */
+				flex-wrap: wrap;
+
+				/* 设置缩小后换行切反向排列 */
+				/* flex-wrap: wrap-reverse; */
+			}
+
+			.box2>div {
+				width: 100px;
+				height: 100px;
+				border: 2px solid #000;
+				font-size: 30px;
+			}
+
+			.box3 {
+				height: 200px;
+				background-color: aqua;
+				/* 开启弹性布局需要给父元素设置 不是给他下面的子元素设置 */
+				display: flex;
+				/* 设置行模式正向排序（即正序排列）:row
+			   注意如把浏览其缩小他会妥协缩小元素的宽度，并且不会换行 */
+				/* flex-direction: row; */
+
+				/* 设置行模式反响排序（即倒叙排列）:row-reverse */
+				/* flex-direction: row-reverse; */
+
+				/* 设置列模式正向排序即正序排列 :column */
+				/* flex-direction: column; */
+
+				/* 设置列模式反向排序即倒叙排列）:column-reverse  */
+				/* flex-direction: column-reverse; */
+
+				/* 设置宽度缩小后不换行 */
+				/* flex-wrap: nowrap; */
+
+				/* 设置宽度缩小后换行 */
+				/* flex-wrap: wrap; */
+
+				/* 设置缩小后换行切反向排列 */
+				/* flex-wrap: wrap-reverse; */
+			}
+
+			.box3>div {
+				width: 100px;
+				height: 100px;
+				border: 2px solid #000;
+				font-size: 30px;
+			}
+
+			.box3 .item2 {
+				/* 设置收缩的比列 flex-shrink:n    即：按照n的倍数收缩    0为不收缩   1按照正常的平分比列收缩  2:  flex-shrink: 3 */
+				flex-shrink: 2;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="box1">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+		<hr>
+		<div class="box2">
+			<div>a</div>
+			<div>b</div>
+			<div>c</div>
+			<div>d</div>
+			<div>e</div>
+			<div>f</div>
+		</div>
+
+		<hr>
+		<div class="box3">
+			<div class="item1">a</div>
+			<div class="item2">b</div>
+			<div class="item3">c</div>
+			<div class="item4">d</div>
+			<div class="item5">e</div>
+			<div class="item6">f</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>img练习scale与rotate</title>
+		<style>
+			div {
+				width: 350px;
+				height: 150px;
+				margin: 200px auto;
+				margin-top: 200px;
+				overflow: hidden;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				/* 增加过渡效果 */
+				transition:  1s transform;
+			}
+
+			img:hover {
+				/*使用transform变换属性一次，能使用一个函数，后面的会把前面的覆盖上面的这种写法不行，所以如果变换函数有多个，使用空格隔开*/
+				transform:rotate(10deg) scale(1.4);
+			}
+		</style>
+	</head>
+	<body>
+
+		<div>
+			<img src="./homework/img/scale.png" alt="">
+		</div>
+	</body>
+</html>

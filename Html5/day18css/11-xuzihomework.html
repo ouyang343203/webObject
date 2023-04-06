@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./code/css/bootstrap.css" />
+    <link rel="stylesheet" href="./code/css/bootstrap-icons.css" />
+    <script src="./code/js/bootstrap.bundle.js"></script>
+    <title>学子商城</title>
+</head>
+
+<body>
+    <!-- 预留的导航菜单位置 -->
+    <div class="mb-2">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <!-- 变宽容器 -->
+            <div class="container-fluid">
+                <!-- navbar-brand:logo区域一般存放公司的logo 一般logo是可以点的，步入点击跳转到公司的首页，所以一般用a标签包裹 -->
+                <a class="navbar-brand" href="#">
+                    <span class="bi-envelope text-danger" style="font-size:20px"></span>
+                    学子商城客户端</a>
+                <!-- 
+                小菜单区域：小菜单在对应的断点才会出现，如：navbar-espand-md 
+                js属性：data-bs-toggle＝＂collapse＂控制折叠功能
+                js属性：data-bs-target＝＂＃navbarNav＂这个id值就是对应大菜单显示的内容
+                -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- 三条杆小图标 -->
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- 大菜单区域
+              .collapse 消失与显示的切换
+              .navbar-collapse 控制CSS样式
+              导航栏列表一般使用导航标签.navbar-nav这个类代表导航栏样式
+              导航栏中一个个导航项 nav-item
+              导航栏中超链接统一的样式.nav-link
+              .active 如果有多个，需要激活，使用此类
+              注意：大菜单的id值要与上面的JS代码对应
+              -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">首页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">数据管理</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">内容管理</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">用户管理</a>
+                        </li>
+
+                        <li class="nav-item position-relative">
+                            <a class="nav-link bi-envelope pe-3" href="#"></a>
+                            <span class="position-absolute top-0 end-0  badge rounded-pill bg-danger"
+                                style="font-size:8px">10</span>
+
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                选择列表
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">第一项</a></li>
+                                <li><a class="dropdown-item" href="#">第二项</a></li>
+                                <li><a class="dropdown-item" href="#">第三项</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+
+                            <a href="javascsript:;" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="nav-link">退出登入</a>
+
+                            <!-- fade：遮照层 -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <!--modal-dialog：弹窗区域 -->
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            点击后将直接关闭页面，是否继续
+                                            <p>再有内容放这里</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-danger" data-bs-dismiss="modal">确定</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form> -->
+                </div>
+            </div>
+        </nav>
+
+    </div>
+    <!-- 主体区域 -->
+    <div class="xz-admin-fluid">
+
+        <!-- 版心需要左右铺满全屏 -->
+        <div class="container-fluid">
+            <div class="row">
+                <!--3 栅格布局左右分割栅格分数 -->
+
+                <!-- 4左侧栏目部分 md-3 md一下消失 -->
+                <div class="col-md-3 d-none d-md-block">
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <!-- collapse：控制当前item内容的展开与折叠 -->
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne">
+                                    <span class="bi-envelope text-danger pe-1" style="font-size:15px"></span>
+                                    第一项
+                                </button>
+                            </h2>
+                            <!-- 展示的主题内容   展示主体 .accordion-collapse collapse 专门负责消失的类 默认所有项都有此类 只要展示主体上有.show才能显示  闭.accordion-body 展示主体的内容区-->
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    我是第一项的内容
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo">
+                                    <span class="bi-envelope text-danger pe-1" style="font-size:15px"></span>
+                                    第二项
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    我是第二项的内容
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree">
+                                    <span class="bi-envelope text-danger pe-1" style="font-size:15px"></span>
+                                    第三项
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    我是三项的内容
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 5右侧栏目部分  md-9 其他请款占满col-12-->
+                <div class="col-md-9 col-12">
+                    <!-- 6在嵌套一层，利用天沟充当间距 -->
+                    <div>
+                        <!-- 7.搜索与选择分页区域 -->
+                        <h2>笔记本商品列表</h2>
+                        <!-- 预留的搜索与选择区域 -->
+                        <div class="row my-3 align-items-center">
+
+                            <!-- 选择分页部分 -->
+                            <div class="col-5">
+                                <span>每夜显示的记录数据:</span>
+                                <select name="" id="">
+                                    <option value="">10</option>
+                                    <option value="">20</option>
+                                    <option value="">30</option>
+                                    <option value="">40</option>
+                                </select>
+                            </div>
+
+                            <!-- 搜索部分 -->
+                            <div class="col-7">
+                                <div class="input-group">
+                                    <input class="form-control" aria-label="With textarea"></input>
+                                    <button class="but btn-primary">搜索</button>
+                                  </div>
+                            </div>
+
+                        </div>
+                        <!-- 表格区域 -->
+                        <table class="table table-striped table-hover table-bordered border-primary">
+                            <thead class="table-dark">
+                                <th>#</th>
+                                <th>品牌</th>
+                                <th>商品名称</th>
+                                <th>价格</th>
+                                <th>操作</th>
+                            </thead>
+
+                            <tbody class="table-striped">
+
+                                <tr>
+                                    <!-- lass="table-success" 表示给这个td添加颜色 -->
+                                    <td class="table-success">1</td>
+                                    <td>戴尔</td>
+                                    <td>MS116鼠标有线</td>
+                                    <td>¥19.80</td>
+                                    <td>
+                                        <button>编辑</button>
+                                        <button>删除</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>华为</td>
+                                    <td>MS116鼠标有线</td>
+                                    <td>¥19.80</td>
+                                    <td>
+                                        <!-- 按钮组合 -->
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-outline-success btn-sm">编辑</button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>小米</td>
+                                    <td>MS116鼠标有线</td>
+                                    <td>¥19.80</td>
+                                    <td>
+                                        <!-- 按钮组合 -->
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-outline-success">编辑</button>
+                                            <button type="button" class="btn btn-outline-danger">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>康佳</td>
+                                    <td>MS116鼠标有线</td>
+                                    <td>¥19.80</td>
+                                    <td>
+                                        <!-- 按钮组合 -->
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-outline-success btn-sm">编辑</button>
+                                            <button type="button" class="btn btn-outline-danger btn-sm">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>苹果</td>
+                                    <td>MS116鼠标有线</td>
+                                    <td>¥19.80</td>
+                                    <td>
+                                        <!-- 按钮组合 -->
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-outline-success">编辑</button>
+                                            <button type="button" class="btn btn-outline-danger">删除</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

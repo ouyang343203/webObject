@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>css的三种样式：行内样式，内部样式，外部样式，</title>
+	<!-- 优先级
+	  1、行内样式优先级 >（内部样式/外部样式：注意内部样式和外部样式优先级 就近原则显示样式）
+	  2、还可以在样式后添加!important强制优先级最高
+	  3、内部样式一般多余首页减少请求次数，提升加载速度
+	  4、外部样式：作用范围大，但是会增加页面的请求次数，可能会影响页面的性能，常用于次级页面的使用更多的用在重复页面，外部样式一般放在<head>标签内部
+	  
+	  为什么style标签和link标签必须写在head中?像script标签那样写在body里不行吗?
+	  虽然写在body中style和link的样式效果是会生效的，但是浏览器在加载渲染页面时，代码
+	  是从上往下一-行行加载的，在head里已经加载过一次样式了，如果加载到body又发现了
+	  style和link,就会把之前加载渲染后的页面样式销毁掉，重新加载(这个叫做页面重绘)
+	  这是非常影响性能的，所以style和link标签用于样式声明时，必须放置到head标签里，用
+	  以防止页面重绘!
+	  
+	 -->	
+	<!-- 内部样式 -->
+		<style>
+			/* 将搜有h3标签的颜色修改  */
+			h3{
+			   color: chartreuse;		
+			}
+		</style>
+	
+	
+	<!-- 外部部样式 -->
+	<!-- 
+	rel:引入的文件类型
+	href：引入的文件路径
+	 -->
+	<link rel="stylesheet" href="01.css">
+
+	</head>
+	<body>
+		
+		<!-- 一：行内样式 -->
+		<!-- 测试的时候最好到文件夹里面双击打开有比对效果 -->
+		<h1 style="color:red;"> 测试行内样式</h1>
+		<!-- 只有删除线不是错误，是样式冲突后未生效 -->
+		<h1 style="color:blueeee;"> 测试invalid proerty value 无效的属性值</h1>
+		<h1 style="display:inline-block;"> 这是样式冲突中（覆盖默认值）</h1>
+		
+		<!-- 
+		   1、多个stye属性之语法：每个属性值赋值后需要添加分号 
+		   2、行内样式只能作用于当前元素，不能于其他元素共享
+		-->
+		<h1 style="color:red; background-color:aqua;"> 新注册用户</h1>
+		<h1 style="color:red; background-color:yellow;"> 新注册用户2</h1>
+		<h1 style="color:red; background-color:blue;"> 新注册用户3</h1>
+		
+		<hr>
+		<!-- 内部样式:
+		1、内部样式他是作用所有相同标签，
+		2、在html的head标签中加入style 
+          <!-- 		
+          <style>
+			/* 将搜有h3标签的颜色修改  */
+			h3{
+			   color: chartreuse;		
+			}
+		  </style> 
+		  -->
+		<h3>测试内部样式1</h3>
+	    <div>测试内部样式</div>
+	    <span>测试内部样式</h3>
+		<h3>测试内部样式</h3>
+		
+	</body>
+</html>

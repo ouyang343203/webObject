@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .box {
+        display: flex;
+        width: 100vw;
+        justify-content: space-evenly;
+        /* 设置行模式正向排序 */
+        flex-direction: row;
+
+        /* 设置行模式反向排序 */
+        /* flex-direction:row-reverse; */
+
+        /* 设置换行 */
+        flex-wrap: wrap;
+
+        /* 设置不换行 */
+        /* flex-wrap: nowrap; */
+    }
+
+
+    /* 一行显示两个红色正方形 */
+    @media(max-width:767px) {
+
+        .box div {
+            height: 42.5vw;
+            width: 42.5vw;
+            font-size: 30px;
+            background-color: #f00;
+            color: #fff;
+            margin-bottom: 1vh;
+        }
+
+    }
+
+    /* 一行显示4个正方形*/
+    @media(min-width:980px) {
+       /* 设置不换行 */
+       .box{
+        flex-wrap: nowrap;
+       }
+
+        .box div {
+            height: 18.75vw;
+            width: 18.75vw;
+            font-size: 30px;
+            background-color: blue;
+            color: #fff;
+            margin-bottom: 1vh;
+        }
+
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="1">1</div>
+        <div class="2">2</div>
+        <div class="3">3</div>
+        <div class="4">4</div>
+    </div>
+</body>
+
+</html>
