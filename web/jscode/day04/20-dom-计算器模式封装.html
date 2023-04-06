@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器封装</title>
+</head>
+
+<body>
+    <h3>hello</h3>
+    <ul>
+        <li>亮亮</li>
+        <li>明明</li>
+        <li>泡泡</li>
+        <li>小新</li>
+    </ul>
+
+
+
+    <script>
+        //需求使用封装的方式 目标：修改所有的li style.color为红色
+        //封装
+        class Query {
+            //constructor 系统默认函数会存储
+            constructor(s) {
+                this.els = document.querySelectorAll(s)//将所有的传过来的参数保存在els自定义的属性中
+            }
+
+            css(name, value) {
+                this.els.forEach(item => {
+                    item.style[name] = value
+                })
+            }
+
+            css(name, value) {
+                this.els.forEach(item => {
+                    item.style[name] = value
+                })
+            }
+
+            click(func) {
+                this.els.forEach(item => {
+                    item.addEventListener('click', func)
+                })
+            }
+        }
+
+        // const q = new Query('ul>li')
+        //利用＄函数 代替了 new Query（）这个长的语法
+        function $(s) {
+            return new Query(s)
+        }
+
+        $('ul>li').css('color', 'red')
+        $('ul>li').css('border', '2px solid blue')
+
+        //给每个li添加点击事件
+        $('ul>li').click(function () {
+            console.log(this)
+        })
+
+        $('h3').click(function () {
+            this.style.color = 'red'
+        })
+    </script>
+</body>
+
+</html>

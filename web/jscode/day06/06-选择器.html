@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器</title>
+</head>
+
+<body>
+    <ul>
+        <li>000</li>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+        <li>666</li>
+        <li>777</li>
+        <li>888</li>
+        <li>999</li>
+        <li>10</li>
+    </ul>
+
+    <script src="../day06/jquery/jquery-3.6.0.js"></script>
+    <script>
+        //获取指定序号的元素第一种语法
+        const li1 = $('li').eq(1)
+        li3.css('background', 'green')
+
+        //获取指定序号的元素第二种语法
+        const $li4 = $('li:eq(4)')
+        $li4.css('background', 'blue')
+
+        //获取下一个兄弟元素
+        $li4.next().css('font-size', '8px')
+        $li4.next().css('background', 'red')
+
+        //获取指定序号的元素第一种语法
+        $li4.css()('background', 'green')
+
+        //获取后面的的所有兄弟元素
+        $li4.nextAll().css('background', 'blue')
+
+        //获取上方所有的兄弟元素
+        $li4.prevAll().css('fountSize', '30')
+
+        $li4.prevUntil('li:eq(0)').css('color','orangercolor')
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-导航点击切换效果</title>
+    <style>
+        #box>span {
+            /* 设置成行内块才能设置内变局 */
+            display: inline-block;
+            background-color: #f1f2f3;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 100px;
+            /* 禁止选择 */
+            user-select: none;
+        }
+
+        #box>span.item {
+            color: white;
+            background-color: #00aeec;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 需求点击时添加或者移蓝色 -->
+    <div id='box'>
+
+        <span class="item">人气推荐</span>
+        <span>免费漫画</span>
+        <span>小说</span>
+        <span>视频</span>
+
+    </div>
+
+
+    <script>
+        const spans = document.querySelectorAll('#box>span')
+        console.log(spans)
+        spans.forEach((value, index, emps) => {
+
+            //第一种方案
+            // value.onclick = function () {
+            //     console.dir(this) //点击查看 className：class属性本身 classList：封装了很多操作class的方法
+            //     if (this.className == '') {
+            //         this.className = 'item'
+            //     } else {
+            //         this.className = ''
+            //     }
+            // }
+
+            //第二种方案使用classList中方法来做切换
+            value.onclick = function () {
+                this.classList.toggle('item')
+                console.dir(this) //点击查看 className：class属性本身 classList：封装了很多操作class的方法
+            }
+        })
+        //在网页上，存在大量通toggle过切换样式 来实现的效果
+    </script>
+
+</body>
+
+</html>

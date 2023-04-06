@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>>行内元素与同- -行中其它元素的竖直对齐方式</title>
+		<!-- 
+		 注意1:内联元素包含行内元素与行内块元素
+		 注意2: img图片虽然是行内元素，但是可以设置宽高，且四个方向的内外间距均生效
+		 注意3:我们可以修改HTML元素的display属性值，切换显示模式-->
+		<style>
+			img {
+				/* 对其方式默认 */
+				/* vertical-align: baseline;/*默认对其方式：基线对其 */
+				vertical-align: top;/*顶线对齐 */
+				/* vertical-align:middle;/*中线对齐 */
+				/* vertical-align:bottom;/*底线对齐 */
+			}
+		</style>
+
+	</head>
+	<body>
+		abyj<img src="img/pro.jpg" alt="" style="width:200px">国际 <br>
+		<img src="img/pro.jpg" alt="" style="width:200px">
+	</body>
+</html>

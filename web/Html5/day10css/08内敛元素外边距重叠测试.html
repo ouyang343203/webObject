@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内敛元素的浮动测试</title>
+		<style>
+			/* 
+			两个子元素添加了垂直方向的margin，未浮动取大值连着有重叠现象
+			浮动后取两者的margin和，无重叠现象
+			*/
+			
+			
+			/* 测试内敛元素的浮动 */
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.fu {
+				background-color: #0f0;
+		/* 		margin-top: 180px; */
+				border: 1px solid green;
+				width: 80px;
+				overflow: hidden;
+			}
+
+			.z1 {
+				background-color: #ff0;
+				display: block;
+				/* 行内元素设置宽高无效 */
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin-bottom: 30px;
+			}
+			
+			.z2 {
+				background-color: #00f;
+				display: block;
+				/* 行内元素设置宽高无效 */
+				width: 100px;
+				height: 100px;
+				float: right;
+				margin-top: 70px;
+			}
+			
+		</style>
+
+	</head>
+	<body>
+		<div class="fu">
+			<div class="z1"></div>
+			<div class="z2"></div>
+		</div>
+
+	</body>
+</html>

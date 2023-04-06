@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆post版本</title>
+    <style>
+/* .uname{
+
+} */
+
+/* input{
+    display: block;
+} */
+
+ 
+    </style>
+</head>
+<body>
+    
+    <h1>用户登录页面</h1>
+    <!-- form 用于按钮提交，向服务器发请求
+    action 设置请求的网址
+    method 设置请求的方式 
+    name 设置的参数值，用于接受参数
+    -->
+    <form action="/mylogin2" method="post">
+        <div>用户名 <input type="text" name="uname" class="uname"></div>
+        <div>密  码 <input type="pwd" name="pwd" class="pwd"></div>
+		<input type="submit" value="提交">
+    </form>
+
+</body>
+</html>

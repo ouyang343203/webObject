@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./code/css/bootstrap.css" />
+    <link rel="stylesheet" href="./code/css/bootstrap-icons.css" />
+    <script src="./code/js/bootstrap.bundle.js"></script>
+    <title>Document</title>
+<!-- 参考BOOt地址：https://v5.bootcss.com/docs/5.3/utilities/borders/#border -->
+    <style>
+        .zdy-box {
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+            margin-bottom: 5px;
+        }
+
+        .rounded-pill {
+            width: 200px;
+            height: 50px;
+            background-color: antiquewhite;
+            margin-bottom: 5px;
+        }
+    </style>
+
+</head>
+
+<!-- Boot 工具类 border边框主要设置：
+单方向边框
+border-bottom 下边框
+border-top 上边框
+border-start 左边框
+border-end 右边框
+
+border-｛number｝0～5数字0去掉边框 1～5边框宽度为1px～5px边框颜色
+
+边框颜色
+border-｛color｝颜色使用boot 提供的颜色即可
+
+边框圆角
+rounded 边框圆角的基础类，默认四个方向 有0.25rem的 border-radiusrounded-｛number｝边框圆角的弧度0～30
+rounded-｛number｝边框圆角的弧度0～30没有圆角3是0.3rem的border-radius 
+rounded-circle 给宽高一致的div 切成圆形
+rounded-pill 给宽长方形的div 切成胶囊形
+
+-->
+
+<body>
+    <div class="container">
+        <!-- 1．四个方向都有边框线 颜色 粗细使用默认值即可 -->
+        <div class="zdy-box border border-5"></div>
+
+        <!-- 2．单方向边框：下边框 -->
+        <div class="zdy-box border-bottom border-5"></div>
+
+        <!-- 3．单方向边框：左边框 -->
+        <div class="zdy-box border-start border-5"></div>
+
+        <!-- 4．单方向边框：上边框 -->
+        <div class="zdy-box border-top border-5"></div>
+
+        <!-- 5．单方向边框：右边框 -->
+        <div class="zdy-box border-end border-5"></div>
+
+        <!-- 6．加边框 边框宽度5px 边框颜色绿色 -->
+        <div class="zdy-box border-start border-success border-5"></div>
+
+        <!-- 7．实现胶囊形状 -->
+        <div class="zdy-box border rounded-pill"></div>
+
+        <!-- 8．实现圆形 -->
+        <div class="zdy-box border rounded-circle"></div>
+
+        <!-- 9．添加默认的边框圆角 --> 
+        <div class="zdy-box rounded-5 bg-warning"></div>
+
+    </div>
+
+</body>
+
+</html>

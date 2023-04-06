@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开关按钮制作</title>
+    <style>
+        .switch {
+            /*inline-block：行内的块元素*/
+            /* inline-flex：行内的弹性盒子*/
+            display: inline-flex;
+            background-color: #9499a0;
+            padding: 8px;
+            border-radius: 100px;
+            width: 70px;
+            /* 移动到时变成小手 */
+            cursor: pointer;
+            transition: 0.3s;
+            /* line-height: 100%; */
+        }
+
+        .switch>span {
+            transition: 0.3s;
+            background-color: white;
+            border-radius: 50%;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+        }
+
+        /* switch.on 表示同时具备两个属性 */
+        .switch.on {
+            background-color: #00aeec;
+            /* 主轴方向靠末尾对齐 */
+            /* 注意弹性盒子使用justify-content transition无效*/
+            /* justify-content: flex-end; */
+        }
+
+        .switch.on>span {
+            margin-left: calc(100% - 30px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- on:代表开启 -->
+    <div class="switch on">
+        <span></span>
+    </div>
+
+    <script>
+        const sw = document.querySelector('.switch')
+        sw.onclick = function () {
+            console.log('点击了')
+            this.classList.toggle('on')
+        }
+    </script>
+</body>
+
+</html>

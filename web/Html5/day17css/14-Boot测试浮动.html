@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./code/css/bootstrap.css" />
+    <link rel="stylesheet" href="./code/css/bootstrap-icons.css" />
+    <script src="./code/js/bootstrap.bundle.js"></script>
+    <title>Boot float浮动测试</title>
+    <!-- 
+    https://v5.bootcss.com/docs/5.1/utilities/float/
+    .float-start 左浮动
+    .float-end 右浮动
+    响应式浮动显示.float-｛类中缀｝-｛浮动方式｝ 如：d-md-block
+    清除浮动
+    .clearfix 清除父元素因所有子元素浮动高度坍塌的问题 （https://v5.bootcss.com/docs/helpers/clearfix/）
+     -->
+</head>
+<style>
+.zdy-h{
+    height: 200px;
+}
+</style>
+<body>
+       <!-- 
+        需求1：第一个div向左浮动 第二1div向右浮动
+        需求2：第二个div要求在md以上才能显示出来
+        -->
+    <!-- 第一种实现方式使用d-flex -->
+    <!-- <div class="container bg-dark d-flex justify-content-between">
+        <div class="zdy-h w-25 bg-danger "></div>
+        <div class="zdy-h w-25 bg-success d-none d-md-block "></div>
+    </div> -->
+
+    <!-- 第二终种实现方式使用浮动 -->
+    <div class="container bg-dark clearfix">
+        <div class="zdy-h w-25 bg-danger float-start"></div>
+        <div class="zdy-h w-25 bg-success d-none d-md-block float-end"></div>
+    </div>
+
+</body>
+
+</html>

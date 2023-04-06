@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-once使用</title>
+</head>
+
+<body>
+    <!-- 需求：让DOM元素上起拍价的数据 初始化后 不再变化
+    v-once:属性就是设置初始化后不再更改
+ -->
+    <div id="box">
+        <h3 v-once>起拍价:{{price}}</h3>
+        <h3>当前价格:{{price}}</h3>
+        <button @click="price+=10">+10</button>
+        <!-- 这条语句不进行编译 主要是跳过编译过程,直接显示原来的mustache语法 -->
+        <span v-pre>{{username}}</span>
+        <br>
+        <span>{{username}}</span>
+    </div>
+    <script src="./vue/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#box",
+            data: {
+                price: 10,
+                username: "Hello dear,I am ChenZY!"
+            },
+        })
+    </script>
+
+</body>
+
+</html>

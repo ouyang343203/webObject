@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件语法2</title>
+</head>
+
+<body>
+    <div id="app">
+        <!--不推荐把复杂的js代码写在HTML中 这里的不传参可以不用添加() -->
+        <button @click="show">Click Me</button>
+        <!-- 带参数 -->
+        <button @click="add(8,11)">Click Me</button>
+
+    </div>
+</body>
+<script src="./vue/vue.js"></script>
+<script>
+    var v = new Vue({
+        el: "#app",
+        //用于存放函数
+        //methods：用于存放函数
+        //最终保存在 vue 对象里
+        methods: {
+            // 完整语法
+            // show: function () {
+            //     alert
+            // }
+
+            //简化语法
+            show() {
+                alert('我是show')
+            },
+
+            //带参数语法
+            add(x, y) {
+                alert(`${x}+${y}= ${x + y}`)
+            }
+        },
+        // 最终保存在 vue 对象里
+        data: {
+            num: 1,
+        }
+    })
+    console.log(v)
+</script>
+
+</html>

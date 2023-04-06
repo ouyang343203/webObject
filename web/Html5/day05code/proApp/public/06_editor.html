@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>编辑商品信息</title>
+	</head>
+    <!--http://127.0.0.1:8080/05_add.html -->
+	<body>
+		编号:<input type="text" id="lid"><br>
+		价格:<input type="text" id="price"><br>
+		标题:<input type="text" id="tit"><br>
+		<input type="button" id="btn" value=新增商品信息"">
+		<span id = "msg"></span>
+		<script>
+			btn.onclick = function(){
+			  let i = lid.value
+			  let p = price.value	
+			  let t = tit.value	
+			  let data = `id=${i}&tit=${t}&price=${p}`
+			  let xhr = new XMLHttpRequest()
+			  //2.访问对应的server文件指定接口地址去获取数据 xrh.open("请求方法","请求地址") 这个地址是路由设置的获取所有datajson.js文件中的数据库
+			  xhr.open('PUT','http://127.0.0.1:8080/v2/pro2/editor')//编辑商品信息接口测试
+			  //如果是POST设置请求头
+			  xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded;charset=utf-8')
+			  // 3.接受到返回数据的处理
+			  xhr.onload = function(){
+			     let result = xhr.responseText //接口返回的数据信息
+			     console.log(result)
+			     msg.innerHTML=result
+			  }
+			  // 4.发送请求post需要给接口发送请求体给接口
+			    xhr.send(data) 
+			}
+		</script>
+	</body>
+</html>

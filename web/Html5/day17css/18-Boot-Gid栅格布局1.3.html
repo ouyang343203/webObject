@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./code/css/bootstrap.css" />
+    <link rel="stylesheet" href="./code/css/bootstrap-icons.css" />
+    <script src="./code/js/bootstrap.bundle.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+ 需求:
+    1、第一行第1列xl-7 lg-6 其他请款12份 高度376px
+    2、第一行第2列xl-5 lg-6 其他请款12份 高度376px
+
+    3、第二行第1列 需求色块没有内容 高度234px xl及以上占用5份  xl以下消失
+    4、第二行第2列 高度234px xl及以上占7份，其他占用12份
+    5、第二行第2列 md级以上一行显示3小块，更小的情况每个小块独占一行
+ -->
+    <div class="container">
+        <!-- 第一行 -->
+        <div class="row mb-2">
+            <!-- 第一行第1列 xl-7 lg-6 其他请款12份 高度376px-->
+            <div class="col-xl-7 col-lg-6 col-12">
+                <div style="background-color: #f00; height:376px;"></div>
+            </div>
+            <!-- 第一行第2列 xl-5 lg-6 其他请款12份 高度376px -->
+            <div class="col-xl-5 col-lg-6 col-12">
+                <div style="background-color: #f00; height:376px;"></div>
+
+            </div>
+
+        </div>
+
+        <!-- 第二行 -->
+        <div class="row">
+            <!-- 第二行第1列 高度234px xl及以上占用5份  xl以下消失-->
+            <div class="col-xl-5 d-xl-block d-none">
+                <div style="background-color: #f00; height:234px;"></div>
+            </div>
+
+
+            <!-- 第二行第2列 xl及以上占7份，其他占用12份-->
+            <div class="col-xl-7 col-12">
+                <div class="row">
+                    <!-- md级以上一行显示3小块，更小的情况每个小块独占一行 -->
+                    <div class="col-md-4 col-12">
+                        <div style="background-color: #00f; height: 234px;"></div>
+                    </div>
+
+                    <!-- md级以上一行显示3小块，更小的情况每个小块独占一行 -->
+                    <div class="col-md-4 col-12">
+                        <div style="background-color: #00f; height: 234px;"></div>
+                    </div>
+
+                    <!-- md级以上一行显示3小块，更小的情况每个小块独占一行 -->
+                    <div class="col-md-4 col-12">
+                        <div style="background-color: #00f; height: 234px;"></div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

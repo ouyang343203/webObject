@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动画变换位移</title>
+		<!-- 变换
+          CSS3过渡动画模板 http://web.chacuo.net/css3transition 这个里面的变换效果都是二维的，我们想用▶时候可以直接使用
+		 
+		 变换概念：
+		 transform :变换属性，该属性可以让我们从多种维度改变元素的样式该属性提供了一下4个变换函数:
+		 transform：translateX（-100px）；在X轴方向上移动，正值向右，负值向左
+		 transform：translateY（200px）；在Y轴方移动，正值向下，负值向上
+		 transform：translate（100px，50px）；在XY两个轴上移动
+		 transform：translate（20px）；仅在X轴方向上移动
+		 
+	
+		 1.元素使用transform变换属性移动时，元素的基点（初始参照的点）默认是元素的中心点，注意，并不是左上角的原点！
+		 2.变换不脱离文档流，但如果移动到了其他元素的位置上面，不会挤开其他元素，而是会发生堆叠，并且这个堆叠无法用z-index调整，所以可能会导致布局错乱
+		 3.除了img以外的行内元素都不能使用变换属性，行内块与块级元素可以使用
+		 4.在变换属性中使用百分比的值，针对的是元素自身的宽度和高度（特别注意）
+		 注意 我们可以通过函数的参数改变变换效果变换可以同时应用在一个或多个元素上，变换的执行顺序是从左向右逐一执行 如果同时执行：transform：translate（100px，50px）后有执行
+		 transform：translate（20px）则后面的效果会覆盖前面的效果，前面设置的效果无效
+		 -->
+
+		<style>
+			.fu {
+				background-color: lightblue;
+				background-color: yellow;
+			}
+			
+			body div {
+				width: 100px;
+				height: 100px;
+				font-size: 15px;
+			}
+			
+			.box1 {
+				background-color: #f00;
+				/* 1、在X轴方向正向移动 */
+				transform: translateX(80px);
+			}
+			
+			.box2 {
+				background-color: #0f0;
+				/* 2、在Y轴方向向下移动 */
+				transform: translateY(-80px);
+			}
+			/* 3行内元素使用transform无效 */
+			span{
+				transform: translateX(100px);
+				background-color: antiquewhite;
+			}
+			
+			/* 4行内元素img是可以使用transform的，而行内的span元素是不能用transform */
+			img{
+				transform: translateX(100px);
+			}
+			
+			input{
+				/* 注意后面的translateY会覆盖前面的translateX 导致translateX设置无效 */
+				/* transform: translateX(200px);
+				transform: translateY(200px); */
+
+                /* 下面这个写法可以水平和垂直同时移动 */
+				transform: translate(200px ,200px);
+			}
+			
+			.box3{
+		       background-color: antiquewhite;
+			   /* 之前x轴水平移动500px y轴垂直方向移动10px   transform: translate(XXpx ,XXpx)*/
+			   transform: translate(500px ,10px);
+			   
+			   /* 如果只有一个值表示水平方向移动 */
+			   transform: translate(500px);
+			}
+			
+		</style>
+
+	</head>
+	<body>
+		<div class="fu">
+			<div class="box1">北京</div>
+			<div class="box2">大连</div>
+			<span>我是内敛元素</span>
+			<img src="./homework/img/item.png" alt="">
+			<input type="text" name="" id="" placeholder="我是一个行内块">
+			<div class="box3">太原</div>
+		</div>
+	</body>
+</html>

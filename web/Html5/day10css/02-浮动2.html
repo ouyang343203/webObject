@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浮动2</title>
+		<style>
+			.fu{
+				width:400px;
+				border: 5px solid #000;
+			}
+			.fu >div{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #f00;
+			}
+			
+			.z1{
+				background-color:  rebeccapurple;
+				/* 第一个子元素向左浮动，脱离文档流，释放布局空间所以在绿色的上面 */
+				float: left;
+			}
+			
+			.z2{
+				/* 第2个子元素向右浮动，脱离文档流，释放布局空间跑到右面，并且父元素的高度只剩下一个div的高度 */
+				background-color: green;
+				float: right;
+			}
+			
+			.z3{
+				/* 第3个子元素向右浮动，脱离文档流，释放布局空间跑到右面跟在二哥后面，并且父元素高度坍塌 */
+				background-color:blue;
+			    float: right;
+			}
+
+		</style>
+	</head>
+	<body>
+	<div class="fu">
+		<div class="z1"></div>
+		<div class="z2"></div>
+		<div class="z3"></div>
+	</div>	
+		
+		
+		
+	</body>
+</html>

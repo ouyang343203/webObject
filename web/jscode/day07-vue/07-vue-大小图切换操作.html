@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大小图切换</title>
+</head>
+
+<body>
+
+    <!-- src vue语法，值是JS代码 -->
+    <!-- JS代码中，模板字符串 -->
+    <div id="box">
+          <!-- 注意这里前面的冒号不要忘记 -->
+        <img :src="`./img/${big}_lg.jpg`" alt="">
+        <div>
+            <img src="./img/1_sm.jpg" @mouseover="big='1'" alt="">
+            <img src="./img/2_sm.jpg" @mouseover="big='2'" alt="">
+            <img src="./img/3_sm.jpg" @mouseover="big='3'" alt="">
+            <img src="./img/4_sm.jpg" @mouseover="big='4'" alt="">
+            <img src="./img/5_sm.jpg" @mouseover="big='5'" alt="">
+        </div>
+    </div>
+    <script src="./vue/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#box",
+            data: { big: '1' }
+        })
+    </script>
+</body>
+
+</html>

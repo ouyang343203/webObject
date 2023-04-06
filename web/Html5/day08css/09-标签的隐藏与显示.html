@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>标签的隐藏与显示</title>
+	<style>
+		div{
+			width: 200px;
+			height:200px;
+			background-color: aqua;
+		}
+		
+		.box1{
+			background-color: aqua;
+		}
+		.box2{
+			background-color: bisque;
+		}
+		
+		.box3{
+			background-color: yellowgreen;
+		}
+		
+		/* 元素隐藏的第一种方法：当鼠标悬停在but1按钮上时对box1操作 */
+		.but1:hover+.box1{
+			/* 设置背景颜色 */
+		    background-color: transparent;
+		}
+	
+		/* 元素隐藏的第二种方法：当鼠标悬停在but1按钮上时对box1操作 */
+		.but2:hover+.box2{
+			/* 设置是否显示这种是通过设置脱离文档流方式消失 如果要显示着设置为 display: block;*/
+		   display: none;
+		}
+		
+		
+		/* 元素隐藏的第三种方法：当鼠标悬停在but1按钮上时对box1操作 这种方式不会脱离文档流*/
+		.but3:hover+.box3{
+			/* 设置可见度 默认值为 visible */
+		    visibility: hidden;
+		}
+		
+		/* 元素隐藏的第三种方法：当鼠标悬停在but1按钮上时对box1操作 */
+		.but4:hover+.box4{
+			/* 设置元素透明度: 0～1*/
+		    opacity: 0;
+		}
+		
+
+	</style>
+	</head>
+	<body>
+		<button class="but1">移入按钮让box1消失</button>
+		<div class="box1"></div>
+		
+	    <button class="but2">移入按钮让box2消失</button>
+		<div class="box2"></div>
+		
+		<button class="but3">移入按钮让box3消失</button>
+		<div class="box3"></div>
+		
+		<button class="but4">移入按钮让box4消失</button>
+		<div class="box4"></div>
+		
+		<script>
+			but1.o
+			
+			
+		</script>
+		
+	</body>
+</html>

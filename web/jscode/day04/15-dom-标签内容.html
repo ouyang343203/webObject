@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签内容</title>
+</head>
+
+<body>
+    <!-- 如果标签中仅有文本内容则innerHTML和innerText无差别 -->
+    <div id='box1'>Hello world</div>
+    <div id='box2'>
+        <a href="">Tmooc</a>
+    </div>
+
+    <div id='box3'></div>
+    <div id='box4'></div>
+
+    <script>
+        //innerHTML 和 innerText 属性区别:
+
+        //区别：一 取值时的差异
+        //innerHTML：获取内部的html代码-标签＋文本
+        //innerText：获取内部的文本-文本 不含标签
+        console.dir(box1)
+        console.dir(box2)
+
+        //区别：二 赋值的差异
+        box3.innerHTML = '<h1>你好</h1>'//会解析后展示
+        box4.innerText = '<h1>你好</h1>'//原样展示，不解析
+
+
+    //由于innerHTML 会把字符串作为 HTML 解析，所以
+    //1．服务器上可以存储HTML字符串，前端获取后进行展示
+    //2．把数据 映射为 HTML字符串，利用innerHTML解析后展示
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>目标伪类选择器</title>
+		
+	<style>
+		
+		div{
+			border:  1px solid #f00 ;
+			width: 300px;
+			height: 200px;
+			/* 
+			让所有的div不出现 */
+			display: none;
+		}
+		
+		/* 标签被触发的状态
+		 a标签数触发标签他通过元素的id可以查找到目标的标签
+		 div 是目标标签 
+		 
+		 要使用a标签的href属性，通过要关联的目标元素的id值进行查找目标元素的：target伪类找到元素，指定后续的CSS代码file:///C:/DAY15/day15code/05.html#txt1.
+		 表示此时txt1对应的div被触发了。
+		 */
+		div:target{
+			display: block;
+		}
+
+	</style>
+		
+		
+	</head>
+	<body>
+
+		<a href="#box1">商品介绍</a>
+		<a href="#box2">规格包装</a>
+		<a href="#box3">售后保障</a>
+		<div id="box1">商品介绍的相关内容．．．．假装有很多图文1</div>
+		<div id="box2">规格与包装的相关内容．．．．假装有很多图文2</div>
+		<div id="box3">售后保障的相关内容．．．．假装有很多图文3</div>
+
+	</body>
+</html>

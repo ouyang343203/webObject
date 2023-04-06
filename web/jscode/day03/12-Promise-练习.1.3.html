@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise-模拟解决回调地狱的另一种方法</title>
+</head>
+
+<body>
+    <script>
+        //检查用户名
+        function chectUsername() {
+            return new Promise((resolve, reject) => {
+                console.log('验证用户名...')
+                //调用
+                setTimeout(() => {
+                    var num = Math.random()
+                    num > 0.1 ? resolve({ n: num, msg: '用户名正确' }) : reject({ n: num, msg: '用户名错误' })
+                }, 1000);
+            })
+        }
+
+
+        //检查邮箱
+        function checkEmail() {
+            return new Promise((resolve, reject) => {
+                console.log('检查邮箱...')
+                //调用
+                setTimeout(() => {
+                    var num = Math.random()
+                    num > 0.1 ? resolve({ n: num, msg: '邮箱正确' }) : reject({ n: num, msg: '邮箱错误' })
+                }, 1000);
+
+            })
+        }
+
+        //检验手机号
+        function checkPhone() {
+            return new Promise((resolve, reject) => {
+                console.log('检验手机号...')
+                //调用
+                setTimeout(() => {
+                    var num = Math.random()
+                    num > 0.1 ? resolve({ n: num, msg: '手机号正确' }) : reject({ n: num, msg: '手机号错误' })
+                }, 1000);
+
+            })
+        }
+
+        //注册
+        function register() {
+            return new Promise((resolve, reject) => {
+                console.log('注册...')
+                //调用
+                setTimeout(() => {
+                    var num = Math.random()
+                    num > 0.1 ? resolve({ n: num, msg: '注册成功' }) : reject({ n: num, msg: '注册失败' })
+                }, 1000);
+
+            })
+        }
+        //async:异步-- 代表 doReg 函数中的操作要异步执行
+        async function doReg() {
+            var a = await chectUsername()
+            console.log('a', a)
+
+            var a1 = await checkEmail()
+            console.log('a1', a1)
+
+            var a2 = await checkPhone()
+            console.log('a2', a2)
+
+            var a3 = await register()
+            console.log('a3', a3)
+        }
+
+        doReg()
+    </script>
+
+</body>
+
+</html>

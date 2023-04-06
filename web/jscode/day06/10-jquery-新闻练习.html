@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <title>事件冒泡新闻练习</title>
+
+    <style>
+        button {
+            outline: none;
+            border: none;
+            background-color: transparent;
+        }
+
+        #news>li {
+            padding: 10px;
+            border-bottom: 1px dashed gray;
+        }
+
+        #pages {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        #pages>li {
+            background-color: #aaaa;
+            padding: 1px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #pages>li.active {
+            background-color: orange;
+            color: white;
+            /*当前页面也不应在被惦记*/
+            pointer-events: none;
+        }
+
+        #pages>li.disabled {
+            background-color: #ddd;
+            color: #aaa;
+            /*指针-事件们：没有；删除所有鼠标事件*/
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul id='new'>
+        <li>新闻标题</li>
+
+        <ul id="pages">
+            <li>1</li>
+        </ul>
+    </ul>
+
+    <script src="../day06/jquery/jquery-3.6.0.js"></script>
+    <script>
+
+        //获取当前页的li元素
+        const currentPage = $('#pages li.active')
+
+        function getData(pageNumber) {
+            var url = `http://www.codeboy.com:9999/mfresh/data/news_select.php?pageNum=${pageNumber}`
+            //url 地址中获取数据，转HTML 显示到页面上
+            $.get(url, data => {
+                $('#news').html(
+                    data.data.list.map(returndata => {
+                        return `<li>
+                              <li>${returndata.title}次观看</li>
+                            </li>`
+                    }))
+                const { pageCount, pageNum } = data
+                const pages = []
+                pages.push(`<li class="prev ${pageNum == 1 ? 'disapled' : ''}">上一页</li>`)
+                for (let i = 1; i <= pageCount; i++) {
+                    pages.push(`<li class="page ${i == pageNum ? `active` : ``}">${i}</li>`)
+                }
+                pages.push(`<li class="next ${pageNum == pageCount ? 'disabled' : ''}">下一页</li>`)
+                $('pages').html(pages)
+            })
+        }
+
+        getData(1)
+
+        //获取上一页元素的点击事件
+        $('#pages').on('click', 'li.prev', function () {
+            //获取点击的li的文字
+            getData(currentPage - 1)
+        })
+
+        //获取中间的li元素
+        $('#pages ').on('click', 'li.page', function () {
+            //获取点击的li的文字
+            getData($(this).text())
+        })
+
+        //获取下一页的元素的点击事件
+        $('#pages ').on('click', 'li.next', function () {
+            //获取点击的li的下一页文字
+            const nextPage = currentPage.text() - -1
+            getData(nextPage)
+        })
+    </script>
+</body>
+
+</html>

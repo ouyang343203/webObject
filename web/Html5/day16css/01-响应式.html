@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>媒体查询练习</title>
+    <!-- 响应式布局
+        随着移动端的兴起，多种页面规格出现，用户各种需求增加，再加上网络的飞速发展，5G急速推进，带来了大量的需求，响应式可以让多种终端，同时看到接近相同的内容响应式也叫做＂自适应页面＂，可以根据浏览器置的不同（大多数指的是设置的宽度），根据宽度来改变不同的布局 文本 图片等的展示效果
+
+     2、设置设备的宽度
+        用浏览器打开页面，打开手机模式的时候，字会变小，原因是页面宽度大于设备的屏幕宽度，所以会整体缩小页面，字体也一起缩小了。
+        为了避免这样不可控的页面缩放，我们需要在TML中告诉浏览器，打开当前页面的设备大小是多少。
+
+    特点：
+       使用一套HTML结构，根据终端检测变化，同时使用“媒体查询”，将不同宽度的CSS加入到不同的媒体查询中，从而随着页面宽度的变化，改变布局样式
+
+
+    3、媒体查询
+    ＠media 是媒体查询规则
+    screen 是媒体类型，就是你当前使用的终端是什么，这个可以省略
+    @media(min-width：600px)设备的最小边界
+    @media(max-width：990px)设备的最大边界
+    注意：写最小边界与最大边界时，要用and单词相连，且and前后必须有空格： @media(min-width:320px) and (max-width:430)
+
+
+    响应式的核心就是适配多种终端，多种终端具有多种尺寸范围，那我们就需要考虑，什么范围下，出现什么样的终端类型，我们要进一步匹配什么样式
+    ＠media（min-width：576px）｛ ｝手机
+    ＠media（min-width：768px）｛ ｝平板
+    ＠media（min-width：992px）｛ ｝ 低端显示器
+    ＠media（min-width：1200px）｛ ｝普通显示器
+    ＠media （min-width：1400px）｛ ｝超大屏幕 高清显示器 广告投放设备
+    注意：代码从上向下渲染，后面的值会覆盖前面的值，所以要把大的值写在后面，这样小值所适配的屏幕宽度不会被覆盖掉
+
+
+
+    4、相对视口尺寸：
+    vw（viewport width）视口宽度
+    vh（viewport height）视口高度
+    这个尺寸是根据浏览器可视区域的比例大小，不含任务栏，不含工作栏，不含浏览器地址栏
+    1vh＝＝视口（浏览器可视区域）高度的1％
+    1vw＝＝视口（浏览器可视区域）宽度的1％
+    浏览器可视区域的宽度都是100vw
+    浏览器可视区域的高度都是100vh
+
+	-->
+
+    <!-- 1．添加meta标签meta:vp Tab补全 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        width＝device-width的意思是“视口宽度＝设宽度＂
+        视口是浏览器能让用户看得到的页面内容展示窗口，所以我们强行让视口宽度等于设备宽度initial-scale＝1.0的意思是＂初始化视口不缩放”
+      -->
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            border-radius: 50%;
+            margin: 50px auto;
+        }
+
+        @media(min-width:576px) {
+            .box {
+                width: 150px;
+                height: 150px;
+            }
+
+            body {
+                background-color:burlywood;
+            }
+        }
+
+        @media(min-width:768px) {
+            .box {
+                width: 250px;
+                height: 250px;
+            }
+
+            body {
+                background-color: lightpink;
+            }
+        }
+
+        @media(min-width:992px) {
+            .box {
+                width: 350px;
+                height: 350px;
+            }
+
+            body {
+                background-color: lightyellow;
+            }
+        }
+
+
+        @media(min-width:1200px) {
+            .box {
+                width: 450px;
+                height: 450px;
+            }
+
+            body {
+                background-color: lightcyan;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">body的变化</div>
+
+
+</body>
+
+</html>

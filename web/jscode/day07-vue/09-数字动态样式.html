@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字动态样式</title>
+    <style>
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        ul {
+            display: flex;
+            background-color: #f5f5f6;
+            padding: 20px;
+        }
+
+        li {
+            background-color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            user-select: none;
+        }
+
+        li.active {
+            background-color: #4e6ef2;
+            color: white;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="box">
+        <h3>当前序号:{{now}}</h3>
+        <ul>
+            <!-- 简化语法：本质上 判断now＝＝几，是真就active 不是就空 -->
+            <!-- ：class＝＂｛active：now＝＝几｝ -->
+            <li @click="now='a'" :class="{active:now=='a'}">1</li>
+            <li @click="now='b'" :class="{active:now=='b'}">2</li>
+            <li @click="now='c'" :class="{active:now=='c'}">3</li>
+            <li @click="now='d'" :class="{active:now=='d'}">4</li>
+            <li @click="now='e'" :class="{active:now=='e'}">5</li>
+
+        </ul>
+        <script src="./vue/vue.js"></script>
+        <script>
+            new Vue({
+                el: "#box",
+                data: {
+                    now: 'a',
+                },
+            })
+        </script>
+    </div>
+</body>
+
+</html>

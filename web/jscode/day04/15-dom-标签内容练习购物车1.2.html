@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车计数器</title>
+</head>
+
+<body>
+    <div id='box'>
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+    </div>
+
+    <script>
+        const box = document.getElementById('box')
+        console.dir(box)//查看children 属性
+        const [btn_jian, sp, btn_jia] = box.children
+        if (sp.innerHTML == 1) {
+            btn_jian.disabled = true
+        }
+
+        btn_jia.onclick = function () {
+
+            //方案：由于＋带有字符串拼接功能 有歧义
+            //利用 负负得正把＋数字 改为- -数字 
+            sp.innerHTML++   //或者    sp.innerHTML  -=-1 
+            btn_jian.disabled = false
+        }
+
+        btn_jian.onclick = function () {
+            sp.innerHTML--
+            console.log(sp.innerHTML)
+            if (sp.innerHTML == 1) {
+                btn_jian.disabled = true
+            }
+        }
+    </script>
+
+</body>
+
+</html>

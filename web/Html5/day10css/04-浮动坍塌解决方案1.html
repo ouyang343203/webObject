@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>浮动2</title>
+		<!-- 浮动产生的后果
+		1．一个父元素中的子元素浮动了，那这个子元素就不再支撑父元素的高度
+		2．如果一个父元素中所有的子元素都浮动了，那父元素会高度坍塌
+		3．破坏原有的文档流布局，变为浮动布局，元素可以横向排列
+		4．浮动会让元素“块状化”【行内 行内块 都会变成块级】
+		5．子元素浮动后，父子外间距的重叠现象消，兄弟件的间距为连个间距的和
+		
+         解决高度坍塌的方法：
+		 1）场景一：已知子元素的高度，并且子元素的高度相同时间，该场景可以让父元素固定高度解决坍塌的问题，主要应用于如导航条。
+		 2）场景二：当父元素设置了BFC，子元素浮动，父元素高度会根据浮动后子元素的高度自动适配 主要应用于子元素未知高度切子元素不会超出父级范围（BFC形成条件：overflow：hidden/scroll/auto）
+	
+		 -->
+		
+		<style>
+			/* 1、测试内敛元素的浮动 */
+			.fu1 {
+				border: 3px solid #000;
+				/* 第一中方案 给父元素设置设置和子元素一样的高度 这种主要用户知道固定高度如导航条*/
+				height: 102px;
+				/* 第二中方案 给父元素设置设置BFC*/
+				/* overflow: hidden; */
+			}
+		
+			span {
+				background-color: #ff0;
+				border: 1px solid #f00;
+				width: 100px;
+				height: 100px;
+				/*行内元素设置浮动会变成块级元素同时会脱离文档流父元素坍塌  */
+				float: left;
+				/* margin-top: 50px; */
+			}
+			
+			/* 2、测试外间距的重叠 */
+			.fu2 {
+				border: 3px solid #000;
+				background-color: #0f0;
+				margin-top: 180px;
+				border: 1x solid green;
+				/* 强行减少父元素的宽度让他小的宽度小于子元素浮动后宽度的和 来测试外边距是否重合 */
+				width: 120px;
+				/* 设置BFC父元素就不会坍塌 */
+				overflow: hidden;
+			}
+			.z1 {
+			    margin-bottom: 20px;
+				width: 100px; 
+				height: 100px;
+				background-color: #f00;
+				float: right;
+			}
+
+			.z2 {
+				margin-top: 30px;
+				width: 100px;
+				height: 100px;
+				background-color: #00f;
+				float: left;
+			}
+		</style>
+
+
+	</head>
+	<body>
+		<div class="fu1">
+			<span>1</span>
+			<span>2</span>
+		</div>
+		<hr>
+
+		<div class="fu2">
+			<div class="z1"> </div>
+			<div class="z2"> </div>
+		</div>
+
+	</body>
+</html>

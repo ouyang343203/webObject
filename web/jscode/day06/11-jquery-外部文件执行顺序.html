@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 
+    ＜！--当引入脚本时，理论上要放在所有DOM元素加载完毕后 再引入--＞
+    ＜！--即：在body的最后一行--＞
+    ＜！--但是：不排除 先宾 同学，不知道这个事，就在头部引入-->
+    <script src="../day06/jquery/jquery-3.6.0.js"></script>
+    <script src = "07.js"></script>
+    <title>外部文件执行顺序</title>
+</head>
+<body>
+
+    <!-- ＜！--实际开发时：HTML中如果同时书写 css html js 代码--＞
+    ＜！--1．导致 html 内容过多，不便于维护--＞
+    ＜！-- 2．复用性：把css和js 书写到外部文件-->
+    <ul>
+        <li>泡泡</li>
+        <li>明明</li>
+        <li>亮亮</li>
+    </ul>
+<script>
+    // $('ul>li').css('color','blue')
+</script>
+</body>
+</html>

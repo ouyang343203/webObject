@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>并列择器</title>
+        <!-- 并列择器：
+            选中可以同时被多个选择器选中的元素 ，多个选择器之间不能有空格
+         -->
+		<style>
+        /* 选中span标签元素，且class值为danger */
+            span.danger{
+                color: red;
+            }
+             /* 选中class值为btn和class值为succ名称的标签*/
+            .btn .succ{/*btn 和succ之前不能有空格*/
+                color: green;
+            }
+		</style>		
+	</head>
+	<body>
+	    <div class="danger"> 1</div>
+        <span class="succ"> 2</span>
+        <span class="succ"> 3</span>
+        <span class="danger"> 4</span>
+        <span class="btn succ"> 5</span>
+        <a href="#">百度一下你就知道</a>
+	</body>
+</html>

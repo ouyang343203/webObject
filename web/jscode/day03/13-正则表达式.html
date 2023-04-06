@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+</head>
+
+<body>
+    <!--
+        正则表达式：Regular Expression 
+        简称：RegExp
+        什么是正则？一套通用的字符串格式匹配方案
+        不是JS专有的
+        使用正则，必须了解正则元字符 表格
+        JavaScript/Guide/Regular_Expressions
+        参考地址：1、developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions    
+        参考地址：2、 http://www.codece.com/archives/273
+     -->
+    <script>
+        // var word = 'hello123'
+        // var r = /\d/ //表示匹配一个数字  匹配一个数字/\d/ 或者 /[0-9]/
+        // console.log(r)
+
+        // //match：匹配
+        // var x = word.match(r)
+        // console.log('x:', x)
+
+
+        // // 正则修饰符:
+        // //正则修饰符：g --global 全局：代表查所有符合的 不再是1个
+        // //语法 ／元字符／修饰符
+        // var r1 = /\d/g //表示找出所有数字
+        // var x1 = word.match(r1)
+        // console.log('x1:', x1)
+
+        // var words = prompt('请输入密码')
+        // console.log('words:', words)
+
+        // //验证是words中是否有数字
+        // var word = words.match(r)
+        // console.log('word:', word)
+        // console.log(word ? '有数字' : '不含数字')
+
+        // //匹配是否有中文
+        // var chinese = words.match(/[\u4e00-\u9fa5]/)
+        // console.log(x ? '有中文' : '没有中文')
+
+        //替换特殊字符
+        // var phone = prompt('请输入手机号码')
+        // console.log('phone:', phone)
+        // //捕获组-把正则表达式分成3段落  
+        // var phoneregular = /(\d{3})(\d{4})(\d{4})/
+
+        // //＄n：第n个捕获组 捕捉的字符
+        // // var phoneres = phone.replace(phoneregular,'$1****$3')
+        // var phoneres = phone.replace(phoneregular, '$1-$2-$3')
+        // console.log('phoneres:', phoneres)
+
+
+        //练习验证字符串是否符合正则表达式的要求
+        // var phone = prompt('请输入手机号码')
+        // console.log('phone:', phone)
+
+        // var phoneregular = /^1[3-9]\d{9}$/
+        // var isphone = phoneregular.test(phone)
+        // console.log(isphone ? '是手机号' : '不是手机号')
+
+
+        //正则表达式的构造方式RegExp
+        var words = 'Hello123 World456'
+
+        //字面量语法 /\d/g  通过RegExp构造一个正则规则 
+        //参数1:元字符 参数2:修饰符 JS中＼是转义符；需要用＼＼把转成普通＼
+        var r = new RegExp('\\d', 'g') //这里由于油转义字符\在里面所以需要两个\\
+        console.dir(r)
+        var matchresult = words.match(r)
+        console.log(matchresult)
+    </script>
+
+</body>
+
+</html>

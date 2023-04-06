@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <title>轮播图</title>
+    <style>
+        #barner {
+            width: 700px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #barner img {
+            width: 100%;
+        }
+
+        #barner>div:first-child {
+            display: flex;
+            /* transform:translateX(-100%); 测试代码*/
+            transition: 0.5s;
+        }
+
+        #barner>div:nth-child(2) {
+            display: flex;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+
+        #barner>div:last-child {
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+        }
+
+        #barner span {
+            background-color: white;
+            width: 14px;
+            height: 14px;
+            align-items: center;
+            border-radius: 50%;
+            margin: 0 4px;
+        }
+
+        #barner span.active {
+            background-color: #0aa1ed;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='barner'>
+        <div>
+            <img src="./img/banner1.png" alt="">
+            <img src="./img/banner2.png" alt="">
+            <img src="./img/banner3.png" alt="">
+            <img src="./img/banner4.png" alt="">
+        </div>
+
+        <div>
+            <button>上一页</button>
+            <button>下一页</button>
+        </div>
+
+        <div>
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+    <script>
+        const spans = document.querySelectorAll('#barner span')
+        //悬浮在原点时切换图片和原点
+        spans.forEach((item, index) => item.onmouseover = function () {
+            spans.forEach(item => item.classList.remove('active'))
+            this.classList.add('active')
+
+            //切换图片使用更改图片的X轴坐标
+            const firstig = document.querySelector('#barner>div:first-child')
+            firstig.style.transform = `translateX(-${index}00%)`
+        })
+
+        //下一页
+        const btn_next = document.querySelector('#barner button:last-child')
+        console.log('next:', btn_next)
+        btn_next.onclick = function () {
+
+            //获取当前的激活的span
+            const nowspan = document.querySelector('#barner .active')
+            console.log('now', nowspan)
+
+            //获取当前激活span的下一个span
+            let nextspan = nowspan.nextElementSibling
+            console.dir(nextspan)
+
+            //如果下一个span元素是null：说明是最后一个 则下一个span要指向第一个span元素
+            if (nextspan == null) {
+                nextspan = document.querySelector('#barner span:first-child')
+            }
+
+            //编程方式：触发元素上绑定的事件方法
+            nextspan.onmouseover()
+        }
+
+        const btn_prev = document.querySelector('#barner button:first-child')
+        btn_prev.onclick = function () {
+
+            //获取当前的激活的span
+            const nowspan = document.querySelector('#barner .active')
+            console.log('now', nowspan)
+
+            //获取当前激活span的上一个span
+            let prespan = nowspan.previousElementSibling
+            if (prespan == null) {
+                prespan = document.querySelector('#barner span:last-child')
+            }
+            //编程方式：触发元素上绑定的事件方法
+            prespan.onmouseover()
+        }
+
+        //每隔三秒自动切换
+        setInterval(() => {
+            btn_next.onclick()
+        }, 3000);
+
+
+
+    </script>
+</body>
+
+</html>

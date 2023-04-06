@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./code/css/bootstrap.css" />
+    <link rel="stylesheet" href="./code/css/bootstrap-icons.css" />
+    <script src="./code/js/bootstrap.bundle.js"></script>
+    <title>下拉菜单</title>
+    <!-- 参考地址: https://v5.bootcss.com/docs/components/dropdowns/
+    外层父元素.dropdown 来包裹按钮与下拉菜单项
+    .dropdown-toggle 负责渲染按钮上的小三个
+    .dropdown-menu 表示下拉菜单
+    .dropdown-item 表示下拉项，下拉项还有悬停效果
+    -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="dropdown">
+            <!-- 如果想要控制菜单项的显示与隐藏，就得用JS代码data-bs-toggle＝＂dropdown＂ -->
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                请选择你喜欢的城市
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">深圳</a></li>
+              <li><a class="dropdown-item" href="#">杭州</a></li>
+              <li><a class="dropdown-item" href="#">上海</a></li>
+            </ul>
+          </div>
+    </div>
+</body>
+</html>

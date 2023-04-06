@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>属性选择器</title>
+		<style>
+		  /*1、选中包含readonly的标签元素*/
+		  [readonly]{
+		 	 border:3px solid red;
+		  }
+         /*2、 选中属性名为name且值为unname的元素 */
+		  [name = "unname"]{
+             background-color: green;
+		  }
+          /* 3、选中input标签，并且属性命为readonly的标签 */
+		  input[name = "code"]{
+			 background-color: blue;
+		  }
+
+		</style>		
+	</head>
+	<body>
+		<input type="text">1 <br>
+		<input type="text" readonly value="就是不让你写">2 <br>
+		<input type="text" name="unname">3 <br> 
+		<input type="password" name="upwd">4 <br>
+		<input type="text" name="code" readonly value="验证码">5 <br>
+	</body>
+</html>

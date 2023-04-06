@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./code/css/bootstrap.css" />
+    <link rel="stylesheet" href="./code/css/bootstrap-icons.css" />
+    <script src="./code/js/bootstrap.bundle.js"></script>
+
+    <title>Boot表格练习</title>
+
+    <style type="text/css">
+        td {
+
+            text-align: center;
+            /*设置水平居中*/
+
+            vertical-align: middle;
+            /*设置垂直居中*/
+        }
+    </style>
+
+    <!-- 
+https://v5.bootcss.com/docs/5.1/content/tables/
+.table 基础类，写给table标签，必须写，有了它其它的辅助类才会生效
+.table-striped 条形纹，写给table标签，表格就会隔行变色
+.table-hover 鼠标悬停行变色效果，写给table，使得tbody里的行发生悬停变色
+.table-bordered 给表格加边框，有了这个属性才可以改边框的颜色 border-｛primary ｝
+表头主题有两个 table-dark深色主体 table-light 亮色主题，写给thead 标签
+
+table颜色：
+.table-｛color｝表格的颜色如：table-striped
+颜色值可以改，这个颜色可以加到table tr td 里
+ -->
+
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-striped table-hover table-bordered border-primary">
+            <thead class="table-dark">
+                <th>#</th>
+                <th>品牌</th>
+                <th>商品名称</th>
+                <th>价格</th>
+                <th>操作</th>
+            </thead>
+
+            <tbody class="table-striped">
+
+                <tr>
+                    <!-- lass="table-success" 表示给这个td添加颜色 -->
+                    <td class="table-success">1</td>
+                    <td>戴尔</td>
+                    <td>MS116鼠标有线</td>
+                    <td>¥19.80</td>
+                    <td>
+                        <button>编辑</button>
+                        <button>删除</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>华为</td>
+                    <td>MS116鼠标有线</td>
+                    <td>¥19.80</td>
+                    <td>
+                        <!-- 按钮组合 -->
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-success btn-sm">编辑</button>
+                            <button type="button" class="btn btn-outline-danger btn-sm">删除</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>小米</td>
+                    <td>MS116鼠标有线</td>
+                    <td>¥19.80</td>
+                    <td>
+                        <!-- 按钮组合 -->
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-success">编辑</button>
+                            <button type="button" class="btn btn-outline-danger">删除</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>康佳</td>
+                    <td>MS116鼠标有线</td>
+                    <td>¥19.80</td>
+                    <td>
+                        <!-- 按钮组合 -->
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-success btn-sm">编辑</button>
+                            <button type="button" class="btn btn-outline-danger btn-sm">删除</button>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>苹果</td>
+                    <td>MS116鼠标有线</td>
+                    <td>¥19.80</td>
+                    <td>
+                        <!-- 按钮组合 -->
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-outline-success">编辑</button>
+                            <button type="button" class="btn btn-outline-danger">删除</button>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+</body>
+
+</html>

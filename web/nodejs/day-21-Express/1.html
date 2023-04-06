@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../day-20-http服务器模块/web.html">
+    <title>Document</title>
+    <style>
+        .maindiv {
+            width: 300px;
+            height: 200px;
+            background-color: antiquewhite;
+            text-align: center;
+        }
+
+        .searchdiv {
+            width: 100%;
+            height: 80px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>用户登录页面</h1>
+    <hr>
+    <h1>用户搜索</h1>
+
+    <!-- form 用于按钮提交，向服务器发请求
+    action 设置请求的网址
+    method 设置请求的方式 
+    name 设置的参数值，用于接受参数
+    -->
+    <form action="/mysearch" method="get">
+        <input type="text" name="kw">
+        <input type="submit">
+    </form>
+</body>
+
+</html>

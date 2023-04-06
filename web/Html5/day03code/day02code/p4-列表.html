@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>有序列表</title>
+	</head>
+	<body>
+		<!-- 1 ol标签：order list表示有序列表 
+		属性：
+		start="n" 指定列表编号的起始值
+		type="1" 指定编号的类型 默认值是1 其他的值 a：小写字母 A：大写字母 i：小谢的罗马数字 I：大写的罗马数字
+		
+		-->
+		<ol start="4" type="I">
+			<li>"第1行"</li>
+			<li>"第2行"</li>
+			<li>"第3行"</li>
+			<li>"第4行"</li>
+		</ol>
+
+		<!--2 ul标签：unorder list无序表示无序列表
+		 属性：
+		 	type="dis" 实心圆默认值， 其他的值：circle 空心圆 square:方块 none：没有标识
+		 -->
+		<ul>
+			<li>"张三"</li>
+			<li>"李四"</li>
+			<li>"王武"</li>
+			<li>"赵六"</li>
+		</ul>
+
+
+		<!-- 列表的嵌套 -->
+		<!-- 外层列表 -->
+		<ul>
+			<li>"商品管理"
+				<ul type="none">
+					<li>"商品列表"</li>
+					<li>"添加商品"</li>
+					<li>"搜索"</li>
+				</ul>
+			</li>
+			
+			<li>"订单管理"
+				<ul type="none">
+					<li>"订单列表"</li>
+					<li>"搜索订单"</li>
+				</ul>
+			</li>
+			
+			<li>"用户管理"
+				<ul type="none">
+					<li>"用户列表"</li>
+					<li>"用户检索"</li>
+				</ul>
+			</li>
+			
+		</ul>
+		<hr>
+		
+		<!--dl标签 定义列表：
+		 用来定义一类事物的情形，比如名次解释，字典等
+		<dl> 定义列表
+			<dt> 要被解释的名词</dt>
+			<dd>这里写具体的解释内容</dd>
+		</dl>
+		 -->
+		<dl>
+			<dt>西游记</dt>
+			<dd>一本神话故事书，讲述一个人与四个动物的故事</dd>
+			
+			<dt>红楼梦</dt>
+			<dd>一本清朝史书，讲述一个男人与n格女人的故事</dd>
+			
+			<dt>水浒传</dt>
+			<dd>一本农名起义数，讲述了108格好汉的故事</dd>
+		</dl>
+
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>BFC</title>
+		<!-- BFC:块级别格式化上下文，相当于在父元素内部开启一个独立的区域在子元素不会洒出父元素的范围
+		 开启BFC的情形：
+		 1、设置overflow属性auto/scroll/hidden 这三个属性会让父元素开启BFC
+		 2、BFC边界一旦形成，就能避免顶部子元素和底部子元素设置margin时和负元素的顶部重叠！
+		 3、BFC开启会重新计算父元素浮动的子元素所占高度
+		 -->
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.fu {
+				background-color: aqua;
+				width: 200px;
+				height: 200px;
+				overflow: auto;/*开启BFC*/
+			}
+
+			.subdiv {
+				margin-top: 50px;
+				background-color: skyblue;
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="fu">
+			<div class="subdiv">
+
+			</div>
+
+		</div>
+
+	</body>
+</html>
