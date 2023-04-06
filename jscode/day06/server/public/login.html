@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post登入</title>
+</head>
+
+<body>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>用户名</td>
+                <td><input type="text" placeholder="请输入用户名"></td>
+            </tr>
+
+            <tr>
+                <td>密码</td>
+                <td><input type="password" placeholder="请输入密码"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button>登陆</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        $('button').click(function () {
+            const uname = $('input').eq(0).val()
+            const upwd = $('input').eq(1).val()
+            var url = 'http://localhost:3000/taranalogin'
+            //与get请求不同，POST的参数必须单独书写
+            //get请求传参：请求地址？参数＝值＆参数＝值
+            var params = `uname=${uname}&upwd=${upwd}}`
+            //拼接字符串的方式较为繁琐，JO提供对象的方案
+            //var param1 = {uname:uname,upwd:upwd,email:email,phone:phone}
+            $.post(url, params, data => {
+                console.log(data)
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //练习
+        //要求1．利用set监听器让 married 属性赋值时监听值的类型 typeof不是boolean的就报错是boolean的就存起来_married
+        //2．当读取时，用get计算属性返回＿married 中的值
+        //3．用define方式新增＿married防止被用户遍历到注意：改成可写的
+        var pao = { ename: '泡泡', married: true }
+        Object.defineProperties(pao, {
+            _married: { writable: true },
+            married: {
+                get() { return this._married },
+                set(value) {
+                    if (typeof value == 'boolean') {
+                        this._married = married
+                    } else {
+                        throw Error('marryf赋值类型错误!' + typeof value)
+                    }
+                }
+            }
+        })
+
+        // emp.married = 666,//报错提示类型错误
+        emp.married = '啊',//报错提示类型错误
+        // emp.married = false //正常赋值
+        console.log(pao.married)
+
+    </script>
+
+</body>
+
+</html>

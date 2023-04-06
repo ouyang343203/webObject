@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom图片相应切换</title>
+</head>
+
+<body>
+    <div id="box">
+        <img src="./img/banner1.png" style="width: 600px;" alt="">
+        <div>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+        </div>
+    </div>
+
+    <script>
+        const imgs = ['./img/banner1.png', './img/banner2.png', './img/banner3.png', './img/banner4.png',]
+        const items = document.querySelectorAll('#box>div>button')
+        items.forEach((value, index, emps) => {
+            console.dir(value)
+            value.onclick = function () {
+                items.forEach((value, index, emps) => {
+                    value.classList.remove('active')
+                })
+                const img = document.querySelector('#box>img')
+                img.src =  imgs[index] 
+                this.classList.add('active')
+            }
+        })
+    </script>
+</body>
+
+</html>

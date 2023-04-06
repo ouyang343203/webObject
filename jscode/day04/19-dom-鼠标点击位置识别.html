@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标事件识别点击的位置</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 500px;
+            background-color: #bbb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #box>span {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            transform: translate(-50%, -50%y);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id='box'>
+        <span></span>
+    </div>
+    <script>
+        const box = document.getElementById('box')
+        console.dir(box)
+        box.addEventListener('click', function (e) {
+            //如果点击自身的小圆点不添加上去
+            if (e.target != box) return
+
+            const { offsetX: x, offsetY: y } = e
+            const spanmark = `<span style="left:${x}px;top:${y}px;"></span>`
+            console.log(spanmark)
+            box.innerHTML += spanmark
+        })
+
+    </script>
+</body>
+
+</html>

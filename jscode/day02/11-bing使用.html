@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- nclick：按钮被鼠标点击的时候，自动触发 通常和DOM操作的按钮点击捆绑
+    有了bind方案：HTML少写点，JS多写点
+    bind：把 对象和实参 绑定到函数上，生成一个新的函数；--延时调用场景
+    -->
+    <button onclick="vol_bind()">点我</button>
+
+    <!-- bind：绑定而不触发，call会直接触发 -->
+    <button onclick="volume.call(r1,200)">点我</button>
+    <script>
+        var r1 = { width: 10, length: 100 }
+        function volume(h) {
+            var x = this.width * this.length * h
+            alert(x)
+        }
+        var vol_bind = volume.bind(r1, 100)
+        console.dir(vol_bind)//展开查看bind 有关的属性
+    </script>
+</body>
+
+</html>

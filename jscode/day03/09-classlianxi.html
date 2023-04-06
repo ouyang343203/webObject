@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class 练习</title>
+    <style>
+        table {
+            /* 合并边宽间距 */
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid gray;
+            padding: 10px 20px;
+        }
+
+        thead {
+            background-color: #eee;
+        }
+
+        .yi {
+            background-color: orange;
+        }
+
+        .weo {
+            background-color: #abc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+
+        <thead>
+            <tr>
+                <td>序号</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>薪资</td>
+                <td>婚姻状态</td>
+            </tr>
+        <tbody id='box'>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+        </thead>
+
+    </table>
+
+
+    <script>
+        //判断是否所有人都大于30岁
+        //判断是否有人工资超过3w
+        //找出所有已婚的人
+        //数组元素显示在表格里，已婚和未婚 添加不同的背景色
+        //把数组中每个人的薪资＋1000
+        //统计年龄超过30岁的人 的年薪总和
+
+
+        var emps2 = [
+            { ename: '泡泡1', age: 28, married: true, salary: 10000 },
+            { ename: '泡泡2', age: 40, married: true, salary: 203000 },
+            { ename: '泡泡3', age: 27, married: false, salary: 20000 },
+            { ename: '泡泡4', age: 34, married: true, salary: 220000 },
+            { ename: '泡泡5', age: 30, married: false, salary: 80000 },
+        ]
+
+        var x1 = emps2.every((value, indext, array) => {
+            //固定3个参数：元素本身，序号，所在数组
+            return value.age > 30 //条件
+        })
+
+        console.log(x1 ? '都大于30岁' : '非都大于30')
+
+        var x2 = emps2.every((value, indext, array) => {
+            //固定3个参数：元素本身，序号，所在数组
+            return value.salary > 30000 //条件
+        })
+        console.log(x2 ? '工资都大于3万' : '工资非都大于3万')
+
+        var x3 = emps2.filter((value, indext, array) => {
+            //固定3个参数：元素本身，序号，所在数组
+            return value.married  //条件
+        })
+        console.log(x3)
+
+
+        //把数组中每个人的薪资＋1000
+        emps2.forEach((value, index, array) => {
+            return value.salary = value.salary + 1000
+        });
+        console.log(emps2)
+
+        //统计年龄超过30岁的人 的年薪总和
+        // var sumprice = 0
+        var sums = emps2.reduce((box, value) => {
+            if (value.age > 30) {
+                return box += value.salary * 12
+            }
+            return box
+        }, 0)
+
+        console.log(sums)
+
+
+
+        //需求数组转 HTML，添加到表格里
+        var href = emps2.map((value, indext, array) => {
+            var { ename, age, married, salary } = value
+            return `<tr class='${married ? 'yi' : 'wei'} '>
+                    <td>${indext + 1}</td>
+                    <td>${ename}</td>
+                    <td>${age}</td>
+                    <td>${married ? '已婚' : '未婚'}</td>
+                    <td>${salary}</td>
+                    </tr>`
+        })
+
+        var href = href.join('')//添加‘’替换默的逗号
+        console.log(href)
+        box.innerHTML = href
+
+
+    </script>
+</body>
+
+</html>

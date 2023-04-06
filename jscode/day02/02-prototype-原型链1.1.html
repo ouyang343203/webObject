@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 练习
+        function Cube(length, width, height) {
+            var obj = {}
+            obj.length = length
+            obj.width = width
+            obj.height = height
+
+            //计算面积
+            obj.area = function () {
+                console.log('面积：', this.width * this.length);
+            }
+
+            //计算周长
+            obj.zc = function () {
+                console.log('周长：', 2 * (this.width + this.length))
+            }
+
+            //计算体积
+            obj.volume = function () {
+                console.log('体积：', this.width * this.length * this.height)
+            }
+            // 利用 原型链 属性，链接到 构造函数的原型 告知对象共享属性存储在哪里
+            obj.__proto__ = Cube.prototype
+
+            return obj
+        }
+
+
+        // console.log(Rect)//后台查看
+        // 把面积和周长方法辅导共享的原型对象里面
+        Cube.prototype.area = function () {
+            return this.length * this.width
+        }
+
+        Cube.prototype.zc = function () {
+            return 2 * (this.width + this.length)
+        }
+
+        Cube.prototype.volume = function () {
+            return this.width * this.height * this.length
+        }
+
+        var cub = Cube(10, 20, 30)
+        console.log(cub.volume())
+        console.log(cub.zc())
+        console.log(cub.area())
+
+
+
+    </script>
+</body>
+
+</html>

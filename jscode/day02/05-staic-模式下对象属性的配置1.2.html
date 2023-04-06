@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var emp = {
+            ename: "泡泡",
+            age: 18,
+            salary: 20000,//薪资
+            married: true,//婚姻
+            phone: '18798987778'
+        }
+
+        //第二个配置： 配置某些属性不要被遍历
+        Object.defineProperties(emp, {
+            married: { enumerable: false },//
+            age: { enumerable: false },//禁止变
+            married: { enumerable: false },//
+        })
+
+        for (var key in emp) {
+            console.log(key, emp[key])
+        }
+
+
+    </script>
+</body>
+
+</html>

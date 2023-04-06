@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>声明提升</title>
+</head>
+
+<body>
+    <script>
+        // 把JS代码规范一次，然后再执行
+        // JS引擎设定：自动按照规矩 把JS代码规范一次，然后再执行
+        // 如果程序员书写的代码不标准 则会影响阅读：因为真正执行的代码和你所写的代码是不同的！！
+        // 要求：程序员应该规范书写的代码，把声明放在使用前书写
+        // ES6前：靠自觉
+
+        console.log(111)
+        a = 5
+        let a
+
+//声明提升：是JS的基础设定，无法变更，应该改动太大..
+//面试问题：let／const有提升吗？
+//答：let／const 有提升；但是有暂存死区的设定，在声明代码行执行前，不可使用
+
+    </script>
+</body>
+
+</html>

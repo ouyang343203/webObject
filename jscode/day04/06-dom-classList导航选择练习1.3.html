@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <title>公司门户导航</title>
+    <style>
+        ul {
+            display: flex;
+            background-color: #002c69;
+            padding: 0 20px;
+        }
+
+        ul>li {
+            width: 100px;
+            padding: 10px 0px;
+            color: white;
+            margin-left: 10px;
+            text-align: center;
+            list-style-type: none;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        /* ul>li:hover {
+            background-color: hsl(0, 0%, 96%);
+        } */
+
+        ul>li.active {
+            background-color: #ff5d23;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li class="active">首页</li>
+        <li>关于我们</li>
+        <li>公司动态</li>
+        <li>产品中心</li>
+        <li>联系我们</li>
+    </ul>
+    <script>
+
+        function suibian(idname) {
+            return document.querySelectorAll(idname)
+        }
+
+        suibian('li').forEach((item, index, emps) => {
+
+            item.onclick = function () {
+
+                suibian('li').forEach((li, index, emps) => {
+
+                    li.classList.remove('active')
+                })
+                this.classList.add('active')
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

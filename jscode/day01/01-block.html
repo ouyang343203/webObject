@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数作用域</title>
+</head>
+
+<body>
+<!-- 
+函数对象拥有一个 scopes 属性：作用域们
+-保存了 函数所在的 所有作用域
+-其中全局作用域叫 global
+--其中函数／局部作用域 叫 closure闭包
+
+
+为什么要存？
+-避免作用域释放／销毁，导致使用到这个作用域中的变量随之释放
+- 例如：a函数中使用了name变量，而 name变量是 displayName作用域的，为了避免 displayName作用域释放，导致name变量消失，所以把 displayName作用域 保存在自身的scopes里
+ -->
+
+
+    <script>
+        function displayName() {
+            //变量name：在displayName函数作用域中
+            var name = '亮个'
+            function a() {
+                //作用域链：如果函数中使用一个变量，按照就近原则，使用离的最近的；顺序 自身-＞上级-＞上上级-＞上上上级....
+                //log：打印出的是美化后的，并非对象类型
+                //dir：direct 直接.打印出函数的本质
+                // console.log(name);
+                console.dir(a);
+
+            }
+            return a
+        }
+
+        var a = displayName()
+        a()
+
+    </script>
+
+</body>
+
+</html>

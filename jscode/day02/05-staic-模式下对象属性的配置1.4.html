@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增属性配置</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        // 第四个配置value 默认值
+        var emp = {
+            ename: '泡泡',
+            age: 28,
+            eid: '10020',
+            husband: '铁柱',
+        }
+
+        //传统新增属性方案：新增的属性 权限都是开放的状态／／可写，可遍历，可配置
+        emp.age = 18
+        emp['phone'] = '18979086738'
+        //用define 方式新增不存在的属性，权限全关：不可写；不可遍历；不可配置  使用value赋值
+        Object.defineProperty(emp, 'salary', {
+            value: 2000,//值  
+        })
+        console.log(emp)
+        emp.slalary = 800//没有权限修改
+        delete emp.slalary
+
+
+
+        //练习给一圆添加计算周长和面积的属性
+        function React(length, width) {
+            this.length = length
+            this.width = width
+        }
+        Object.defineProperties(emp, React.prototype, {
+            zc: {
+                get() { return 2 * (this.length + this.width) }
+            },
+            area: {
+                get() { return this.length * this.width }
+
+            }
+        })
+        var r1 = new React(10, 20)
+        console.log(r1)
+        //直接使用get后 调用计算周长和计算面积的方法后不用添加小括号可以直接调用
+        console.log(r1.zc)
+        console.log(r1.zc)
+
+        r1.prototype.xx =  function(){
+            console.log(r1.zc)
+        }
+
+        confirm.log(r1.xx)
+
+    </script>
+</body>
+
+</html>

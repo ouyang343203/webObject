@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级函数</title>
+</head>
+
+<!-- -高阶函数：函数中 使用了其他函数，就叫高阶函数
+      最常见：通过参数 接收外来的函数--关联知识点-回调函数
+ -->
+
+<body>
+
+    <script>
+        //1、系统高阶函数 ：every every 与 逻辑与 ＆＆很相似：全真则真；有假则假
+        var nums = [3, 1, 8, 13, -35, 35, 5, 56, 34]
+        //需求：数组里是否每个数字 都是正数
+        //every：每一个；会自动遍历数组，把每一个元素都传递给箭头函数进行处理
+        var x = nums.every((value, indext, array) => {
+            //固定3个参数：元素本身，序号，所在数组
+            console.log(indext, value, array);
+            console.log('---------------------------')
+            return value > 0 //条件
+        })
+        //every最终结果：每个元素都满足条件，就是真；如果有任意1个不满足条件，则为假
+        console.log(x)
+
+
+        //练习1 是否都大于10
+        var nums2 = [10, 13, 13, 13, -35, 2, 5, 56, 34]
+
+        var x1 = nums2.every((value, indext, array) => {
+            //固定3个参数：元素本身，序号，所在数组
+            console.log(indext, value, array);
+            console.log('---------------------------')
+            return value > 10 //条件
+        })
+        console.log(x1 ? '都大于10' : '非都大于10')
+
+        //以上简化1:没用用到的参数可以省略不写
+        var x2 = nums2.every((value) => {
+            //固定3个参数：元素本身，序号，所在数组
+            console.log('--------x2x2x2x2x2-------------------')
+            return value > 10 //条件
+        })
+        console.log(x2 ? 'x2数组中有大于10' : '非都大于10')
+
+
+        var x3 = nums2.every((value,index) => {
+            //固定3个参数：元素本身，序号，所在数组
+            console.log(`---------------第${index}个条件满足-------------------`)
+            return value > 10 //条件
+        })
+        console.log(x3 ? 'x2数组中有大于10' : '非都大于10')
+
+
+        //以上简化2 箭头函数 函数体只要一行，省略｛｝和return
+        var x3 = nums2.every(value => value > 10)
+        console.log(x3 ? 'x4数组中有大于10' : '非都大于10')
+
+        //简化4：形参名 可以自定义value -> v（任意字母）
+        var nums4 = [100, 130, 13, 13, 35, 20, 11, 56, 34]
+        var x4 = nums4.every(r => r > 10)
+        console.log(x4 ? 'x4数组中有大于10' : '非都大于10')
+
+
+        // 简化练习1、判断师是否都是偶数
+        var x5 = nums4.every(r => r % 2 == 0)
+        console.log(x5 ? '都是偶数' : '非都是偶数')
+
+        /* 简化练习2：
+           任务1：是否每个人都小于30岁
+           任务2：是否都已婚
+           任务3：是否薪资都大于2W
+        */
+        var emps = [
+            { ename: '泡泡1', age: 28, married: true, salary: 10000 },
+            { ename: '泡泡2', age: 24, married: true, salary: 203000 },
+            { ename: '泡泡3', age: 27, married: false, salary: 20000 },
+            { ename: '泡泡4', age: 30, married: true, salary: 220000 },
+            { ename: '泡泡5', age: 30, married: false, salary: 80000 },
+        ]
+        var emps1 = emps.every(r => ((r.age < 30) && (r.married) && (r.salary > 20000)))
+        console.log(emps1 ? '有符合条件的' : '都不符合条件的')
+
+
+        //2、系统高阶函数 ：some：有一些 满足条件的元素则为真 否则为假
+        var nums5 = [1, 17, 13, 4, -55, 35, 70, 56, 34]
+        //如判断是否有负数
+        var num = nums5.some(r => r < 0)
+        console.log(num ? '有负数' : '没有负数')
+
+        //练习1
+        // 任务1：是否有人小于30岁
+        // 任务2：是否都已婚
+        // 任务3：是否薪资都大于2W
+
+        // var emps1 = emps.some(r => ((r.age < 30) && (!r.married) && (r.salary > 20000)))
+        // console.log(emps1 ? '有符合条件的-小于30岁/是否都已婚/是否薪资都大于2W' : '都不符合条件的')
+
+        var emps2 = emps.some((value, indext, array) => {
+            //固定3个参数：元素本身，序号，所在数组
+            return ((value.age < 30) && (!value.married) && (value.salary > 20000)) //条件
+        })
+        console.log(emps2 ? '有符合条件的-小于30岁/是否都已婚/是否薪资都大于2W' : '都不符合条件的')
+    </script>
+</body>
+
+</html>

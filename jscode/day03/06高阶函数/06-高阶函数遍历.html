@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历方法</title>
+</head>
+
+<body>
+    <!-- 常用的便利方法 -->
+
+    <script>
+        //第一种便利的传统的遍历方法
+        var emps = ['亮亮', '泡泡', '小心', '铭铭']
+        for (let i = 0; i < emps.length; i++) {
+            console.log(i, emps[i])
+        }
+
+        // 第二种便利方法 for..in
+        for (let key in emps) {
+            console.log(key, emps[key])
+        }
+
+
+        // 第三种遍历方法 ES6提供的 for．．of：专为数组设计 这种获取不到序号
+        for (let value of emps) {
+            console.log(value)
+        }
+
+        // 第四种遍历方法 .forEach：真数组中具有的遍历方法
+        emps.forEach((value, index, emps) => {
+            console.log(index, value)
+        })
+        //假数组／伪数组／类数组：外观和数组一样，但是原型不是Array
+        function show() {
+            console.log(arguments)//arguments这里他是伪数组
+            // arguments.forEach()//arguments这里他是伪数组所以不能这样使用
+        }
+
+        var emps1 = ['张三', '李四', '王五', '找刘']
+        show(emps1)
+
+        //练习1 求数组和
+        var nums = [12, 13, 5, 18, 111, 80]
+        var sum = 0
+        for(const num of nums){
+            sum+=num
+        }
+        console.log(sum)
+        var sum1 = 0;
+
+        nums.forEach(value =>sum1+=value)
+        console.log(sum1)
+
+
+         //练习2求数组中工资的和
+        var sum2 = 0;
+        var emps2 = [
+            { ename: '泡泡1', age: 28, married: true, salary: 10000 },
+            { ename: '泡泡2', age: 24, married: true, salary: 203000 },
+            { ename: '泡泡3', age: 27, married: false, salary: 20000 },
+            { ename: '泡泡4', age: 30, married: true, salary: 220000 },
+            { ename: '泡泡5', age: 30, married: false, salary: 80000 },
+        ]
+
+        emps2.forEach(value =>sum2+=value.salary)
+        console.log(sum2)
+
+
+        //求30岁以上的工资的和
+        var sum3 = 0;
+        emps2.forEach(value =>{
+
+            if(value.age < 30){
+                sum3+=value.salary
+            }
+        })
+        console.log(sum3)
+    </script>
+
+</body>
+
+</html>

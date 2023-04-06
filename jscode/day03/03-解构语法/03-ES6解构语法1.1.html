@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var emps = ['亮亮', '泡泡', '铭铭']
+        //传统的元素取值 
+        var e0 = emps[0]
+        var e1 = emps[1]
+        var e1 = emps[2]
+
+        //解购语法的元素取值:将数组赋值 给一个组变量
+        var [e0, e1, e2] = emps
+        var obj1 = e0
+        var obj2 = e1
+        var obj2 = e2
+
+        // 可选解购:可选解构：不想要的可以不写
+        var [m0, , , m1] = emps
+        console.log(m0, m1)
+
+        //技巧：巧妙的互换变量的值
+
+        //x和y的值互换
+        //必须用；间隔［］和上一行代码，否则会 歧义.误会下标取值语法
+        var x = 100
+        var y = 300
+        ;[x, y] = [y, x]
+        console.log(x, y)
+
+        //解析：
+        //首先：先组合出一个数组［y，x］-＞［50,10］
+        //然后：解构这个数组
+        [x, y] = [50, 10]
+
+    </script>
+</body>
+
+</html>

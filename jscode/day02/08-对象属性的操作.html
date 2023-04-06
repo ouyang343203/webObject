@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象属性的操作(增删改查)</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        //对象属性的操作分为4种：增/删/改/查
+        var pao = { enmae: '泡泡', age: 18, married: true }
+
+        //1、第一种阻止添加新元素:preventExtensions
+        // Object.preventExtensions(pao)
+        // pao.husband = '铁柱'
+
+        //2、阻止增加和删除:seal
+        // pao.seal(pao)
+        // delete pao.age
+
+        //3、:freeze阻止 新增/删除/修改，
+        Object.freeze(pao)
+        pao.age = 100
+    </script>
+</body>
+
+</html>

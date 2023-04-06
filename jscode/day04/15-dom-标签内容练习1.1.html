@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签内容</title>
+</head>
+
+<body>
+    <!-- 如果标签中仅有文本内容则innerHTML和innerText无差别 -->
+    <div id='box'></div>
+    <script>
+        const data = ['亮亮', '泡泡', '铭铭', '小新']
+        const x = data.map(v=>`<button>${v}</button>`)
+        console.log(x)
+        box.innerHTML = x.join('')
+    </script>
+</body>
+
+</html>

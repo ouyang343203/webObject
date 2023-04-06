@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>斗鱼</title>
+</head>
+
+<body>
+
+    <script src="./jquery-3.6.0.js"></script>
+    <script>
+        //遇到的问题：来自斗鱼的接口，响应头中没有写cors，所以作为其他来源的访问，被拒绝了--出现跨域问题
+        //我们无法修改此服务器的设定，无法设置cors
+        //var url = 'https://m.douyu.com/api/cate/recList'//遇到的问题：来自斗鱼的接口，响应头中没有写cors，所以作为其他来源的访问，被拒绝了--出现跨域问题下面的地址是在app.js设置了代理后的代理地址就可以访问到数据
+        //var urlpath = 'http://localhost:3000/api/cate/recList' //由于开了代理服务器这个接口的数据可以直接访问获取
+        var url1 = 'http://localhost:3000' //代理的服务器地址1
+        //var url2 = 'http://localhost:3000/douyu' //代理的服务器地址2
+        $.get(url, data => {
+            console.log('服务器的数据', data)
+
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reduce-使用</title>
+</head>
+
+<body>
+
+    <script>
+
+        //reduce-使用计算所有元素的总和
+        var nums = [12, 4, 45, 765, 67, 87, 89, 9]
+        // 参数box:相当于捐款箱   参数0:相当于捐款箱子的初始金额
+        //这种模式就是捐款箱传递模式
+        //简化前
+        var sums = nums.reduce((box, value) => {
+            return box + value
+        }, 0)
+        //简化后
+        var sums1 = nums.reduce((box, value) => box + value, 0)
+        console.log(sums)
+
+
+
+
+        //练习1 reduce-使用
+        //需求计算商品的总价
+        var products = [
+            { pname: "iPhone14", price: 6999, num: 4, checked: true },
+            { pname: "iPhone14 pro", price: 8999, num: 3, checked: true },
+            { pname: "iPhone14 pro max", price: 10999, num: 1, checked: true },
+            { pname: "Mate50", price: 7999, num: 3, checked: false },
+        ]
+
+        //1计算所有商品的总价 第一种可以使用for循环便利使用
+        var sumprice = 0
+
+        var sumprice = nums.reduce((box, value) => {
+            return box + value.price * value.num
+        }, 0)
+        console.log(sumprice)
+
+        //2计算选中商品的价格
+        var sumprice1 = products.reduce(value => sumprice += value.price * value.num)
+        console.log(sumprice)
+
+
+        var selectprice = products.reduce((box, value) => {
+            if (value.checked) {
+                return box + value.price * value.num
+            }
+            return box // 注意如果没有勾选，应该把箱子传递给下一个
+        }, 0)
+        console.log(selectprice)
+
+    </script>
+
+
+</body>
+
+</html>

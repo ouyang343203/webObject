@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>宿主环境环境</title>
+</head>
+<!-- 
+    宿主环境：寄生关系，A寄生在B身上，就说B是A的宿主
+    JS 运行在什么环境中，这个环境就是其宿主
+    -node.js： JS在node环境中运行，就能操作服务器.数据库..
+    -浏览器：JS在浏览器中运行，就能操作浏览器的各种功能
+ -->
+
+<body>
+
+    <script>
+        //1\ window：此变量是对象类型，由浏览器提供，其中存储了操作浏览器相关的各种API-接
+        // window.alert('hello')
+        // 简化：所有window中的属性都可以直接用，不用加前缀
+        // alert('hello')
+
+        // 2、作用域
+        //  JS具有4大作用域对象：
+        //  ES6前：2015年前，JS第6版本前：全局作用域(全局作用域：用于存放系统API 的对象，在浏览器中，就是 window 对象，所有在脚本中用var声明的变量，会存储在 window这个全局作用域对象里 注意：window对象的初衷是系统提供的用来存放 系统API的对象把自定义的变量，放在window里，就会造成全局污染，所以就需要局部变量) 和局部作用域()
+        //  ES6后：脚本作用域和块级作用域
+
+        // 函数中声明的变量：存放在作用域 而非全局所以：没有全局变量污染
+        function x() {
+            var b = 10
+            var c = 20
+            console.log(b, c)
+        }
+        x()
+
+
+     // 3、作用域链
+
+
+
+
+    </script>
+</body>
+
+</html>

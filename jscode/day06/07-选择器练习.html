@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>评分练习</title>
+    <style>
+        #box {
+            background-color: #eee;
+            padding: 10px;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img src="./img/star.png" alt="">
+        <img src="./img/star.png" alt="">
+        <img src="./img/star.png" alt="">
+        <img src="./img/star.png" alt="">
+        <img src="./img/star.png" alt="">
+        <img src="./img/star.png" alt="">
+    </div>
+
+    <p>当前分数:<i>1</i></p>
+
+    <script src="../day06/jquery/jquery-3.6.0.js"></script>
+    <script>
+        //需求：点击星星图片，点亮自身和其前方的，后面的图是灰色
+        $('#box>img').click(function (event) {
+            console.log('点击了')
+            const star = './img/star.png'
+            const star_on = './img/star_on.png'
+            $(this).prop('src', star_on)
+            $(this).prevAll().prop('src', star_on)
+            $(this).nextAll().prop('src', star)
+
+            //获取当前点击项序号
+            const i = $(this).index()
+            console.log('当前的序号', i)
+            $('i').text(i + 1)
+        })
+
+
+
+        // //获取指定序号的元素第一种语法
+        // const li1 = $('li').eq(1)
+        // li3.css('background', 'green')
+
+        // //获取指定序号的元素第二种语法
+        // const $li4 = $('li:eq(4)')
+        // $li4.css('background', 'blue')
+
+        // //获取下一个兄弟元素
+        // $li4.next().css('font-size', '8px')
+        // $li4.next().css('background', 'red')
+
+        // //获取指定序号的元素第一种语法
+        // $li4.css()('background', 'green')
+
+        // //获取后面的的所有兄弟元素
+        // $li4.nextAll().css('background', 'blue')
+
+        // //获取上方所有的兄弟元素
+        // $li4.prevAll().css('fountSize', '30')
+
+        // $li4.prevUntil('li:eq(0)').css('color', 'oranger')
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+
+<body>
+    <script src="../day06/jquery/jquery-3.6.0.js"></script>
+    <script>
+        //网络请求：从远程服务器，通过网络 来获取数据的过程
+        //接口网站：api．xin88．top
+        var url = 'https://api.xin88.top/car/news.json'
+        console.dir($)
+
+        //＄是JQ提供的函数，此函数很万能
+        //除了基本的＄()用法以外，还在函数对象中保存了很多易用的方法
+        // $.get(url, suibian => {
+        //     console.log((suibian));
+        // })
+
+        //练习 把https://api.xin88.top/douban/movies.json 的数据请求下来
+        var url2 = 'https://api.xin88.top/douban/movies.json'
+        $.get(url2, data => {
+            console.log('suibian',(data));
+        })
+
+    </script>
+</body>
+
+</html>

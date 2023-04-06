@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        this的含义
+        -函数()非严格模式下事window   严格模式下是undefiend
+        -对象中.函数():对象
+        -new 函数（）：实例对象
+        -箭头函数：自身没有，通过作用域链元素就近查找
+     -->
+
+    <div id="app">
+        <button @click="add1">{{num}}</button>
+    </div>
+    <script src="./vue/vue.js"></script>
+    <script>
+        var v = new Vue({
+            el: "#app",
+            data: { num: 1 },
+            methods: {
+                //触发后，给num＋1
+                // add1函数最终存储在vue对象里
+                //所以add1使用时，其this就是vue对象
+                add1() {
+                    this.num++
+                }
+            }
+        })
+        console.log(v)
+    </script>
+</body>
+
+</html>

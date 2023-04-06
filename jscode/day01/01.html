@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面试题目</title>
+</head>
+
+<body>
+
+    <!-- 注意下面的执行顺序 -->
+    <script>
+        // 第二步骤执行
+        alert(a)
+        a()
+        var a = 3
+
+        // 第一步执行
+        function a() {
+            alert(10)
+        }
+
+        // 第三部执行
+        alert(a)
+        a = 6
+
+        // 第四部执行 这里就会形成 6() 所以会报错
+        a()
+    </script>
+</body>
+
+</html>

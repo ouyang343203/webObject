@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办事项练习</title>
+    <style>
+        .del {
+            text-decoration: line-through;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text">
+        <button>确定</button>
+        <ul>
+            <li>
+                <span>吃饭</span>
+                <button>已完成</button>
+            </li>
+            <li>
+                <span>睡觉</span>
+                <button>已完成</button>
+            </li>
+            <li>
+                <span>打亮亮</span>
+                <button>已完成</button>
+            </li>
+        </ul>
+
+        <script>
+
+            const inputmark = document.querySelector('input')
+            const ulmark = document.querySelector('ul')
+
+            const qd_btn = inputmark.nextElementSibling
+            qd_btn.onclick = function (element) {
+                if (inputmark.value.trim() == '') return //过滤空格
+
+                const li = `<li>
+                <span>${inputmark.value}</span>
+                <button>已完成</button>
+            </li>`
+                ulmark.innerHTML += li
+            }
+
+            //enter键盘 效果同点击确定按钮
+            inputmark.onkeyup = function (e) {
+                if (e.keyCode == 13) {//如果按了enter键盘
+                    qd_btn.onclick()//调用确定方法
+                }
+            }
+
+            //点击 已完成按钮 为文字添加del样式 这里会有问题就是新增的元素点击已经完成不会在添加横线的问题 解决方法将电极的方法添加到ul这样在点击按钮
+            // const btns = document.querySelectorAll('ul button')
+            // btns.forEach(item => item.onclick = function () {
+            //     item.previousElementSibling.classList.add('del')
+            // })
+            ulmark.onclick = function (item) {
+                console.log(item.target.localName)
+                if (item.target.localName == 'button') {
+                    item.target.previousElementSibling.classList.add('del')
+                }
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

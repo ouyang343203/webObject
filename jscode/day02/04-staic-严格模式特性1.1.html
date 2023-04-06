@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+//实际工作中，各种第三方框架默认都会开启严格模式
+//严格模式除了讲解的这三个之外，还有更多的好处..可以慢慢体验
+
+
+        //ES5： JS的第五个版本 在2009年推出，也称ES2009
+        //新增了 严格模式 特性
+        //如何JS开启严格模式，则会带有更多的报错；强制程序员书写更加健壮的代码
+
+        // 开启严格模式 他会自动检测代码中出现的错误
+        'use strict'
+
+        // 注意1
+        //在严格模式下：变量必须先声明 后使用
+        //如果变量名写错，导致找不到这个变量，就会报错！
+
+        var servername = 'localost'
+        // serversname = 'www.tedu.cn'
+        console.log(servername)
+        console.log(window)
+
+        // 注意2
+        //全局中声明，存放在window里
+        //问题：在严格模式下 构造函数忘记用new触发，则会在全局window中 意外的增 加属性--undefined 全局污染
+
+        function Rect(length, width) {
+            this.length = length
+            this.width = width
+        }
+
+        var r1 = Rect(10, 30)
+        console.log(r1)
+
+
+
+        // 注意3: 严格模式下取消静默（静默：即对属性的访问权限如果禁止方位属性的部分权限在不开启严格模式下不会报错）失败，增加更多的报错
+        var emp = { ename: '泡泡', age: 36 }
+        Object.freeze(emp)//这里表示不让更改对象的任何属性
+        emp.age = 30
+        console.log(emp)
+
+    </script>
+</body>
+
+</html>

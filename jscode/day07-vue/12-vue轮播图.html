@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue轮播图</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        #box {
+            width: 700px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #box img {
+            width: 100%;
+            transition: 0.4s;
+        }
+
+        #box>div:first-child {
+            display: flex;
+            /* transform:translateX(-100%); 测试代码*/
+            transition: 0.5s;
+        }
+
+        #box>div:nth-child(2) {
+            display: flex;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+
+        #box>div:last-child {
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+        }
+
+        #box span {
+            background-color: white;
+            width: 14px;
+            height: 14px;
+            align-items: center;
+            border-radius: 50%;
+            margin: 0 4px;
+        }
+
+        #box span.active {
+            background-color: #0aa1ed;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='box'>
+        <div>
+            <img :style="`margin-left: -${now}00%;`" src="./img/banner1.png" alt="">
+            <img src="./img/banner2.png" alt="">
+            <img src="./img/banner3.png" alt="">
+            <img src="./img/banner4.png" alt="">
+        </div>
+
+        <div>
+            <button @click="now==0 ? now=3 : now--">上一页</button>
+            <button @click="now==3 ? now=0 : now++">下一页</button>
+        </div>
+
+        <div>
+            <span @mouseover="now=0" :class="{active:now==0}"></span>
+            <span @mouseover="now=1" :class="{active:now==1}"></span>
+            <span @mouseover="now=2" :class="{active:now==2}"></span>
+            <span @mouseover="now=3" :class="{active:now==3}"></span>
+        </div>
+
+    </div>
+    <script src="./vue/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#box",
+            data: {
+                now: 0,
+            },
+        })
+    </script>
+
+</body>
+
+</html>
